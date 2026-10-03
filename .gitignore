@@ -20,3 +20,4 @@ tau2/data_report.json
 tau2/results/format_check_sample.jsonl
 tau2/kaggle/upload/
 tau2/kaggle/package/
+tau2/kaggle/kernel_finetune/

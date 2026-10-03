@@ -4,8 +4,9 @@ Target: run failed (reward 0) vs succeeded (reward 1); labels come from database
 usage:
     python tau2/experiment.py corpus        # filter runs.jsonl -> data/corpus.jsonl (+ last-1,024-token tails)
     python tau2/experiment.py split         # task-disjoint 60/10/30 split by customer scenario -> data/split.json
-    python tau2/experiment.py tfidf         # TF-IDF + logistic regression, full run and last 1,024 tokens
-    python tau2/experiment.py report-tfidf  # TF-IDF-only metrics -> results/report_tfidf.json
+    python tau2/experiment.py tfidf         # TF-IDF + logistic regression, full run and last 1,024 tokens,
+                                            # each with and without the user simulator's control tokens
+    python tau2/experiment.py baselines     # transcript-free baselines: train failure rate per domain (+ agent)
     python tau2/experiment.py laya-select   # Laya wording chosen on the calibration split only
     python tau2/experiment.py laya-test     # Laya-typed zero-shot on the test split with the chosen wording
     python tau2/experiment.py import-kaggle # use the Kaggle GPU run's outputs (tau2/kaggle/output/) instead
@@ -20,6 +21,7 @@ from __future__ import annotations
 import json
 import math
 import random
+import re
 import sys
 import time
 from collections import defaultdict
@@ -39,6 +41,7 @@ from common.metrics import (
     logit,
     percentile,
     recall_at_budget,
+    stratified_auroc,
 )
 
 HERE = Path(__file__).parent
@@ -162,7 +165,17 @@ def split_rows(split: str) -> list[dict]:
 # TF-IDF + logistic regression
 # ---------------------------------------------------------------------------
 
-TFIDF_VIEWS = {"tfidf-full": "text", "tfidf-tail1024": "tail_1024"}
+# name -> (corpus field, strip the user simulator's control tokens?)
+TFIDF_VIEWS = {"tfidf-full": ("text", False), "tfidf-tail1024": ("tail_1024", False),
+               "tfidf-full-notok": ("text", True), "tfidf-tail1024-notok": ("tail_1024", True)}
+# tau2's simulated customer ends a conversation by emitting one of these. They are benchmark
+# plumbing that real traffic doesn't have, and the ending they mark correlates with the outcome.
+CONTROL_TOKENS = re.compile(r"###(?:STOP|TRANSFER|OUT-OF-SCOPE)###")
+
+
+def tfidf_input(r: dict, view: str) -> str:
+    field, strip = TFIDF_VIEWS[view]
+    return CONTROL_TOKENS.sub("", r[field]) if strip else r[field]
 
 
 def run_tfidf() -> None:
@@ -170,19 +183,47 @@ def run_tfidf() -> None:
     from sklearn.linear_model import LogisticRegression
 
     train, test = split_rows("train"), split_rows("test")
-    for name, field in TFIDF_VIEWS.items():
+    for name in TFIDF_VIEWS:
         # Unigram+bigram TF-IDF (30k features) with L2 logistic regression, as in arXiv 2606.09863.
         vec = TfidfVectorizer(ngram_range=(1, 2), max_features=30_000, sublinear_tf=True, min_df=2)
         clf = LogisticRegression(max_iter=2000, C=1.0)
-        clf.fit(vec.fit_transform([r[field] for r in train]), [int(r["failed"]) for r in train])
+        clf.fit(vec.fit_transform([tfidf_input(r, name) for r in train]), [int(r["failed"]) for r in train])
         col = list(clf.classes_).index(1)
         preds = []
         for r in test:
             t0 = time.perf_counter()
-            p = float(clf.predict_proba(vec.transform([r[field]]))[0, col])
+            p = float(clf.predict_proba(vec.transform([tfidf_input(r, name)]))[0, col])
             preds.append({"run_id": r["run_id"], "p_fail": p, "latency_ms": (time.perf_counter() - t0) * 1000})
         write_jsonl(RESULTS / f"pred_{name}.jsonl", preds)
         print(f"{name}: trained on {len(train)} runs, scored {len(test)}", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
+# Transcript-free baselines
+# ---------------------------------------------------------------------------
+
+RATE_BASELINES = {"rate-domain": lambda r: r["domain"],
+                  "rate-domain+agent": lambda r: (r["domain"], r["submission"])}
+
+
+def run_baselines() -> None:
+    """Score each test run with the training split's failure rate for its domain, or for its
+    domain and agent (submission). They never read the transcript, so they show how much of a
+    pooled AUROC comes from base rates alone."""
+    train, test = split_rows("train"), split_rows("test")
+    for name, key in RATE_BASELINES.items():
+        counts = defaultdict(lambda: [0, 0])
+        for r in train:
+            counts[key(r)][0] += r["failed"]
+            counts[key(r)][1] += 1
+        rate = {k: f / n for k, (f, n) in counts.items()}
+        preds = []
+        for r in test:
+            t0 = time.perf_counter()
+            p = rate[key(r)]
+            preds.append({"run_id": r["run_id"], "p_fail": p, "latency_ms": (time.perf_counter() - t0) * 1000})
+        write_jsonl(RESULTS / f"pred_{name}.jsonl", preds)
+        print(f"{name}: {len(rate)} rates from {len(train)} train runs, scored {len(test)}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -309,7 +350,8 @@ def _refit(p: float, t_shipped: float, t_refit: float) -> float:
 
 
 def model_predictions() -> dict[str, dict[str, dict]]:
-    models = {name: {p["run_id"]: p for p in load_jsonl(RESULTS / f"pred_{name}.jsonl")} for name in TFIDF_VIEWS}
+    models = {name: {p["run_id"]: p for p in load_jsonl(RESULTS / f"pred_{name}.jsonl")}
+              for name in [*RATE_BASELINES, *TFIDF_VIEWS]}
     w = json.loads(WORDING_PATH.read_text())
     s = w["scores"][w["chosen"]]
     shipped = {p["run_id"]: p for p in load_jsonl(RESULTS / f"pred_laya-typed_{w['chosen']}.jsonl")}
@@ -319,20 +361,28 @@ def model_predictions() -> dict[str, dict[str, dict]]:
     return models
 
 
+def within_domain_auroc(items: list[tuple]) -> float:
+    """items: (p_fail, failed, domain). AUROC over failed/succeeded pairs from the same domain."""
+    return stratified_auroc([p for p, *_ in items], [y for _, y, _ in items], [d for *_, d in items])
+
+
+# items: (p_fail, failed, domain). "auroc" is pooled over domains, so it also rewards knowing that
+# domains fail at different rates; "auroc_within_domain" doesn't.
 METRICS = {
-    "auroc": lambda items: auroc([p for p, _ in items], [y for _, y in items]),
-    "recall@10%": lambda items: recall_at_budget([p for p, _ in items], [y for _, y in items], REVIEW_BUDGET),
-    "ece": lambda items: ece([p for p, _ in items], [float(y) for _, y in items]),
-    "brier": lambda items: brier([p for p, _ in items], [float(y) for _, y in items]),
+    "auroc": lambda items: auroc([p for p, *_ in items], [y for _, y, _ in items]),
+    "auroc_within_domain": within_domain_auroc,
+    "recall@10%": lambda items: recall_at_budget([p for p, *_ in items], [y for _, y, _ in items], REVIEW_BUDGET),
+    "ece": lambda items: ece([p for p, *_ in items], [float(y) for _, y, _ in items]),
+    "brier": lambda items: brier([p for p, *_ in items], [float(y) for _, y, _ in items]),
 }
 
 
 def evaluate(test: list[dict], preds: dict[str, dict]) -> dict:
     by_group = defaultdict(list)
     for r in test:
-        by_group[r["group"]].append((preds[r["run_id"]]["p_fail"], r["failed"]))
+        by_group[r["group"]].append((preds[r["run_id"]]["p_fail"], r["failed"], r["domain"]))
     items = [x for g in by_group.values() for x in g]
-    out = {"n_runs": len(items), "n_groups": len(by_group), "failure_rate": sum(y for _, y in items) / len(items)}
+    out = {"n_runs": len(items), "n_groups": len(by_group), "failure_rate": sum(y for _, y, _ in items) / len(items)}
     out["recall@10%_ceiling"] = min(1.0, REVIEW_BUDGET / out["failure_rate"])
     for name, stat in METRICS.items():
         lo, hi = cluster_bootstrap_ci(list(by_group.values()), stat, seed=SEED)
@@ -343,17 +393,6 @@ def evaluate(test: list[dict], preds: dict[str, dict]) -> dict:
     out["latency_ms_p50"] = {"value": percentile(lat, 0.5), "ci95": [boots[25], boots[974]]}
     out["latency_ms_p95"] = percentile(lat, 0.95)
     return out
-
-
-def report_tfidf() -> None:
-    """TF-IDF-only report, available before any Laya predictions exist."""
-    test = split_rows("test")
-    models = {name: {p["run_id"]: p for p in load_jsonl(RESULTS / f"pred_{name}.jsonl")} for name in TFIDF_VIEWS}
-    rep = {"overall": {m: evaluate(test, p) for m, p in models.items()},
-           "by_domain": {m: {d: evaluate([r for r in test if r["domain"] == d], p) for d in DOMAINS}
-                         for m, p in models.items()}}
-    (RESULTS / "report_tfidf.json").write_text(json.dumps(rep, indent=2) + "\n")
-    print_tables(rep)
 
 
 HAIKU_PRICE_IN, HAIKU_PRICE_OUT = 1.00, 5.00  # $/MTok, claude-haiku-4-5 (claude-api skill, cached 2026-06-24)
@@ -378,6 +417,8 @@ def report_matched() -> None:
             per_run = sum(u["input_tokens"] * HAIKU_PRICE_IN + u["output_tokens"] * HAIKU_PRICE_OUT
                           for u in usage) / 1e6 / len(usage)
             m["cost_per_1000"] = f"${1000 * per_run:.2f} API"
+        elif name.startswith("rate-"):
+            m["cost_per_1000"] = "~0 (table lookup)"
         else:
             hw = "T4 GPU" if name.startswith("laya") else "laptop CPU"
             m["cost_per_1000"] = f"{sum(lat) / len(lat):.0f} s {hw} (self-hosted)"
@@ -388,9 +429,11 @@ def report_matched() -> None:
     any_m = next(iter(rep["models"].values()))
     print(f"\n=== same {rep['n_runs']} test runs for every model: {any_m['n_groups']} scenario groups, "
           f"failure rate {any_m['failure_rate']:.1%}, recall@10% ceiling {any_m['recall@10%_ceiling']:.2f} ===")
-    print(f"{'model':24s}{'AUROC':>22s}{'recall@10%':>22s}{'ECE':>22s}{'lat p50 ms':>12s}{'p95 ms':>10s}  cost per 1,000 runs")
+    print(f"{'model':24s}{'AUROC pooled':>22s}{'AUROC within domain':>22s}{'recall@10%':>22s}{'ECE':>22s}"
+          f"{'lat p50 ms':>12s}{'p95 ms':>10s}  cost per 1,000 runs")
     for name, m in rep["models"].items():
-        print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'recall@10%'):>22s}{_fmt(m, 'ece'):>22s}"
+        print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'auroc_within_domain'):>22s}{_fmt(m, 'recall@10%'):>22s}"
+              f"{_fmt(m, 'ece'):>22s}"
               f"{m['latency_ms_p50']['value']:12.1f}{m['latency_ms_p95']:10.1f}  {m['cost_per_1000']}")
     print("\nAUROC by domain:")
     for name, m in rep["models"].items():
@@ -427,8 +470,8 @@ def report_finetune() -> None:
               f"NLL {m['nll']:.4f}  AUROC {m['auroc']:.3f}  (n={m['n']})")
     print(f"  fitted noul temperatures: { {k: round(v[2], 3) for k, v in sel['info']['fitted_temperatures'].items()} }")
 
-    def stat(xs):
-        return auroc([p for p, _ in xs], [y for _, y in xs])
+    paired_stats = {"auroc": lambda xs: auroc([p for p, *_ in xs], [y for _, y, _ in xs]),
+                    "auroc_within_domain": within_domain_auroc}
 
     for scope, rows in scopes.items():
         missing = [r["run_id"] for r in rows for s in seeds if r["run_id"] not in ft[s]]
@@ -439,31 +482,37 @@ def report_finetune() -> None:
             out[f"laya-ft seed {s}"] = evaluate(rows, ft[s])
             clusters = defaultdict(list)
             for r in rows:
-                clusters[r["group"]].append((ft[s][r["run_id"]]["p_fail"], tfidf[r["run_id"]]["p_fail"], r["failed"]))
-            out[f"laya-ft seed {s}"]["paired_vs_tfidf"] = paired_cluster_bootstrap(list(clusters.values()), stat, seed=SEED)
+                clusters[r["group"]].append((ft[s][r["run_id"]]["p_fail"], tfidf[r["run_id"]]["p_fail"], r["failed"],
+                                             r["domain"]))
+            out[f"laya-ft seed {s}"]["paired_vs_tfidf"] = {
+                k: paired_cluster_bootstrap(list(clusters.values()), f, seed=SEED) for k, f in paired_stats.items()}
         per_seed = [out[f"laya-ft seed {s}"] for s in seeds]
         out["laya-ft mean of 3 seeds"] = {
             k: {"mean": sum(m[k]["value"] for m in per_seed) / len(per_seed),
                 "range": [min(m[k]["value"] for m in per_seed), max(m[k]["value"] for m in per_seed)]}
-            for k in ("auroc", "recall@10%", "ece", "brier")}
+            for k in ("auroc", "auroc_within_domain", "recall@10%", "ece", "brier")}
         rep["scopes"][scope] = out
 
         t = out["tfidf-tail1024"]
         print(f"\n=== {scope}: {t['n_runs']} runs, {t['n_groups']} scenario groups, failure rate "
               f"{t['failure_rate']:.1%}, recall@10% ceiling {t['recall@10%_ceiling']:.2f} ===")
-        print(f"{'model':24s}{'AUROC':>22s}{'recall@10%':>22s}{'ECE':>22s}{'lat p50 ms':>12s}{'p95 ms':>9s}")
+        print(f"{'model':24s}{'AUROC pooled':>22s}{'AUROC within domain':>22s}{'recall@10%':>22s}{'ECE':>22s}"
+              f"{'lat p50 ms':>12s}{'p95 ms':>9s}")
         for name in ["tfidf-tail1024"] + [f"laya-ft seed {s}" for s in seeds]:
             m = out[name]
-            print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'recall@10%'):>22s}{_fmt(m, 'ece'):>22s}"
+            print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'auroc_within_domain'):>22s}{_fmt(m, 'recall@10%'):>22s}"
+                  f"{_fmt(m, 'ece'):>22s}"
                   f"{m['latency_ms_p50']['value']:12.1f}{m['latency_ms_p95']:9.1f}")
         mm = out["laya-ft mean of 3 seeds"]
         print(f"{'laya-ft mean [range]':24s}" + "".join(
-            f"{mm[k]['mean']:>8.3f} [{mm[k]['range'][0]:.3f}, {mm[k]['range'][1]:.3f}]" for k in ("auroc", "recall@10%", "ece")))
-        print("paired bootstrap, AUROC(laya-ft) - AUROC(tfidf-tail1024), resampling scenario groups:")
-        for s in seeds:
-            p = out[f"laya-ft seed {s}"]["paired_vs_tfidf"]
-            print(f"  seed {s}: {p['diff']:+.3f}  95% CI [{p['ci95'][0]:+.3f}, {p['ci95'][1]:+.3f}]  "
-                  f"P(laya-ft not better) {p['p_a_not_better']:.3f}")
+            f"{mm[k]['mean']:>8.3f} [{mm[k]['range'][0]:.3f}, {mm[k]['range'][1]:.3f}]"
+            for k in ("auroc", "auroc_within_domain", "recall@10%", "ece")))
+        for k in paired_stats:
+            print(f"paired bootstrap, {k}(laya-ft) - {k}(tfidf-tail1024), resampling scenario groups:")
+            for s in seeds:
+                p = out[f"laya-ft seed {s}"]["paired_vs_tfidf"][k]
+                print(f"  seed {s}: {p['diff']:+.3f}  95% CI [{p['ci95'][0]:+.3f}, {p['ci95'][1]:+.3f}]  "
+                      f"P(laya-ft not better) {p['p_a_not_better']:.3f}")
     (RESULTS / "report_finetune.json").write_text(json.dumps(rep, indent=2) + "\n")
 
 
@@ -497,10 +546,12 @@ def print_tables(rep: dict) -> None:
         any_m = next(iter(block.values()))
         print(f"\n=== {title}: {any_m['n_runs']} runs, {any_m['n_groups']} scenario groups, "
               f"failure rate {any_m['failure_rate']:.1%}, recall@10% ceiling {any_m['recall@10%_ceiling']:.2f} ===")
-        print(f"{'model':24s}{'AUROC':>22s}{'recall@10%':>22s}{'ECE':>22s}{'Brier':>22s}{'latency p50 ms':>24s}")
+        print(f"{'model':24s}{'AUROC pooled':>22s}{'AUROC within domain':>22s}{'recall@10%':>22s}{'ECE':>22s}"
+              f"{'Brier':>22s}{'latency p50 ms':>24s}")
         for name, m in block.items():
             lat = m["latency_ms_p50"]
-            print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'recall@10%'):>22s}{_fmt(m, 'ece'):>22s}"
+            print(f"{name:24s}{_fmt(m, 'auroc'):>22s}{_fmt(m, 'auroc_within_domain'):>22s}{_fmt(m, 'recall@10%'):>22s}"
+                  f"{_fmt(m, 'ece'):>22s}"
                   f"{_fmt(m, 'brier'):>22s}{lat['value']:>10.1f} [{lat['ci95'][0]:.1f}, {lat['ci95'][1]:.1f}]")
 
     table("test split, all domains", rep["overall"])
@@ -527,7 +578,7 @@ def print_report(rep: dict) -> None:
 
 
 if __name__ == "__main__":
-    commands = {"corpus": build_corpus, "split": make_split, "tfidf": run_tfidf, "report-tfidf": report_tfidf,
+    commands = {"corpus": build_corpus, "split": make_split, "tfidf": run_tfidf, "baselines": run_baselines,
                 "laya-select": laya_select, "laya-test": laya_test, "import-kaggle": import_kaggle, "report": report,
                 "report-matched": report_matched, "report-finetune": report_finetune}
     cmd = sys.argv[1] if len(sys.argv) > 1 else "--help"

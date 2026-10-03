@@ -72,7 +72,7 @@ reliability bins, temperature fit), the Laya wrapper (`common/laya_agent.py`) an
 The Qwen GGUF (`models/`) and the API key (`.env`) also stay at the repo root.
 
 Files (all under `bgl/`):
-- `data/BGL.zip`: the Loghub BGL release; `logs/`: run logs.
+- `data/BGL.zip`: the Loghub BGL release.
 - `alerts.jsonl` / `results.jsonl`: canonical template-level eval set and its results.
 - `alerts.jsonl.rowlevel200.bak`: the original row-level 200-alert eval set.
 - `results_rowlevel200.jsonl`: results on that set with the current Haiku and Laya runs.

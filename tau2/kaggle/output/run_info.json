@@ -1,8 +1,0 @@
-{
-  "laya": "0.3.21",
-  "torch": "2.10.0+cu128",
-  "device": "cuda",
-  "gpu": "Tesla T4",
-  "dtype": "torch.float16",
-  "amp": true
-}

@@ -1,16 +1,65 @@
 {
-  "tfidf_minus_haiku": {
+  "tfidf_minus_haiku (auroc)": {
     "diff": 0.13850168771096383,
     "ci95": [
       0.04700231275573741,
       0.22154439809961413
     ]
   },
-  "tfidf_minus_laya_ft_mean": {
+  "tfidf_minus_laya_ft_mean (auroc)": {
     "diff": 0.04202608659415763,
     "ci95": [
       -0.01259604018912519,
       0.09617761299435024
+    ]
+  },
+  "laya_ft_mean_minus_haiku (auroc)": {
+    "diff": 0.0964756011168062,
+    "ci95": [
+      0.00563247863247851,
+      0.1893955059277641
+    ]
+  },
+  "tfidf_minus_haiku (auroc_within_domain)": {
+    "diff": 0.07598272138228945,
+    "ci95": [
+      -0.03626435172220677,
+      0.1880921895006401
+    ]
+  },
+  "tfidf_minus_laya_ft_mean (auroc_within_domain)": {
+    "diff": 0.0355219582433407,
+    "ci95": [
+      -0.032990196078431344,
+      0.10134115387253895
+    ]
+  },
+  "laya_ft_mean_minus_haiku (auroc_within_domain)": {
+    "diff": 0.04046076313894875,
+    "ci95": [
+      -0.062397147558968746,
+      0.15417070630902363
+    ]
+  },
+  "laya_ft_seed42_minus_haiku (auroc_within_domain)": {
+    "diff": 0.0022030237580993317,
+    "ci95": [
+      -0.09684649868604112,
+      0.1145103953463319
+    ]
+  },
+  "laya_ft_seed43_minus_haiku (auroc_within_domain)": {
+    "diff": 0.10073434125269976,
+    "ci95": [
+      -0.0041434262948207845,
+      0.21907538525614323
+    ]
+  },
+  "laya_ft_seed44_minus_haiku (auroc_within_domain)": {
+    "diff": 0.018444924406047503,
+    "ci95": [
+      -0.10132973405318946,
+      0.14506172839506182
     ]
   }
 }

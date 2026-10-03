@@ -115,14 +115,37 @@ def auroc(scores: list[float], labels: list[bool]) -> float:
     return (rank_sum - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg)
 
 
+def stratified_auroc(scores: list[float], labels: list[bool], strata: list) -> float:
+    """AUROC counting only (positive, negative) pairs from the same stratum, e.g. the same domain.
+    Equals the per-stratum AUROCs averaged with weights n_pos * n_neg, so differences in base rate
+    between strata can't raise it."""
+    by = {}
+    for p, y, s in zip(scores, labels, strata):
+        by.setdefault(s, ([], []))
+        by[s][0].append(p)
+        by[s][1].append(y)
+    num = den = 0.0
+    for ps, ys in by.values():
+        n_pos = sum(bool(y) for y in ys)
+        pairs = n_pos * (len(ys) - n_pos)
+        if pairs:
+            num += auroc(ps, ys) * pairs
+            den += pairs
+    return num / den if den else float("nan")
+
+
 def recall_at_budget(scores: list[float], labels: list[bool], budget: float = 0.10) -> float:
-    """Share of all positives caught when the top `budget` fraction of items by score is reviewed."""
+    """Share of all positives caught when the top `budget` fraction of items by score is reviewed.
+    Items tied at the cut-off share the remaining review slots evenly (the expected recall under
+    random tie-breaking), so the result doesn't depend on input order."""
     n_pos = sum(bool(y) for y in labels)
     if not n_pos:
         return float("nan")
     k = math.ceil(budget * len(scores))
-    top = sorted(range(len(scores)), key=lambda i: -scores[i])[:k]
-    return sum(bool(labels[i]) for i in top) / n_pos
+    cut = sorted(scores, reverse=True)[k - 1]
+    above = [bool(y) for p, y in zip(scores, labels) if p > cut]
+    tied = [bool(y) for p, y in zip(scores, labels) if p == cut]
+    return (sum(above) + (k - len(above)) * sum(tied) / len(tied)) / n_pos
 
 
 def cluster_bootstrap_ci(clusters: list[list], stat, n_boot: int = 1000, seed: int = 0,
@@ -146,12 +169,13 @@ def cluster_bootstrap_ci(clusters: list[list], stat, n_boot: int = 1000, seed: i
 
 def paired_cluster_bootstrap(clusters: list[list[tuple]], stat, n_boot: int = 1000, seed: int = 0,
                              alpha: float = 0.05) -> dict:
-    """Paired bootstrap of stat(model A) - stat(model B). Items are (score_a, score_b, label); each
+    """Paired bootstrap of stat(model A) - stat(model B). Items are (score_a, score_b, label, *extra),
+    and stat sees (score, label, *extra), e.g. extra = domain for a within-domain statistic. Each
     resample draws whole clusters once and scores both models on the same items."""
     import random
 
     def diff(items):
-        return stat([(a, y) for a, _, y in items]) - stat([(b, y) for _, b, y in items])
+        return stat([(a, *rest) for a, _, *rest in items]) - stat([(b, *rest) for _, b, *rest in items])
 
     rng = random.Random(seed)
     values = []

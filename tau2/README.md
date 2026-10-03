@@ -3,25 +3,43 @@
 **Short answer: not on this data.** We compared four ways to flag customer-service agent runs
 that failed: a TF-IDF + logistic regression baseline, Laya zero-shot, Laya fine-tuned with its
 official trainer, and Claude Haiku 4.5 as an LLM judge. Every model was evaluated on tasks it
-never saw. The TF-IDF baseline on the last 1,024 tokens of each run was the best model.
+never saw. The TF-IDF baseline on the last 1,024 tokens of each run scored highest on average.
 Fine-tuning moved Laya from chance to useful, but across 3 seeds it averaged below TF-IDF, and
-only one seed reached TF-IDF's level. Haiku as a judge beat zero-shot Laya but lost clearly to
-TF-IDF.
+only one seed reached TF-IDF's level. Haiku as a judge clearly beat zero-shot Laya. Once the
+domains' different failure rates are taken out, the differences among TF-IDF, Haiku and
+fine-tuned Laya are within the margin of error.
 
-![AUROC with 95% CI per model](results/auroc_by_model.png)
+![Within-domain AUROC with 95% CI per model](results/auroc_by_model.png)
 
-| on the same 497 test runs | AUROC (95% CI) | recall at 10% review | ECE | latency p50 | cost per 1,000 runs |
-|---|---|---|---|---|---|
-| **TF-IDF + LogReg, last 1,024 tokens** | **0.840** (0.738-0.925) | **0.45** | 0.055 | 1.6 ms (laptop CPU) | ~2 s of CPU |
-| Laya fine-tuned, mean of 3 seeds | 0.798 (0.707-0.886) | 0.39 | 0.056 | ~92-103 ms (T4) | ~100 s of T4 GPU |
-| Claude Haiku 4.5 judge | 0.702 (0.577-0.815) | 0.24 | 0.134 | 1,275 ms (API) | $4.07 |
-| Laya zero-shot | 0.529 (0.461-0.630) | 0.09 | 0.352 | 94 ms (T4) | ~94 s of T4 GPU |
+**Two AUROCs.** The three domains fail at very different rates (telecom 5.6%, retail 23.7%). A
+lookup table of each domain's and agent's training failure rate, which never reads a
+transcript, reaches a pooled AUROC of 0.69, about the same as Haiku's 0.70. Trained models learn
+those base rates from the training runs; a blind judge can't. **Within-domain AUROC** counts only
+failed/succeeded pairs from the same domain, so base rates can't help. Both are reported; the
+chart and the headline use within-domain. It was added in a post-hoc audit, not pre-registered,
+and nothing was re-selected because of it.
+
+| on the same 497 test runs | AUROC within domain (95% CI) | AUROC pooled (95% CI) | recall at 10% review | ECE | latency p50 | cost per 1,000 runs |
+|---|---|---|---|---|---|---|
+| **TF-IDF + LogReg, last 1,024 tokens** | **0.799** (0.695-0.881) | **0.840** (0.738-0.925) | **0.45** | 0.055 | 1.9 ms (laptop CPU) | ~2 s of CPU |
+| Laya fine-tuned, mean of 3 seeds | 0.764 (0.670-0.851) | 0.798 (0.707-0.886) | 0.39 | 0.056 | ~92-103 ms (T4) | ~100 s of T4 GPU |
+| Claude Haiku 4.5 judge | 0.723 (0.605-0.827) | 0.702 (0.577-0.815) | 0.24 | 0.134 | 1,275 ms (API) | $4.07 |
+| Laya zero-shot | 0.556 (0.473-0.647) | 0.529 (0.461-0.630) | 0.09 | 0.352 | 94 ms (T4) | ~94 s of T4 GPU |
+| *Baseline: failure rate per domain + agent* | 0.558 (0.459-0.645) | 0.691 (0.553-0.793) | 0.16 | 0.018 | ~0 | ~0 |
+| *Baseline: failure rate per domain* | 0.500 | 0.671 (0.526-0.783) | 0.16 | 0.033 | ~0 | ~0 |
 
 Paired bootstraps resample whole scenarios, so both models are scored on the same runs:
-- TF-IDF beats Haiku by **+0.139 AUROC** (95% CI +0.047 to +0.222).
-- Against the fine-tuned Laya mean, TF-IDF leads by +0.042 (CI −0.013 to +0.096). That's a tie
-  or better on these runs. On the full test split, 2 of the 3 seeds are significantly worse than
-  TF-IDF.
+- TF-IDF vs Haiku: **+0.076 within domain (95% CI −0.036 to +0.188)**, so not a clear lead.
+  Pooled it is +0.139 (+0.047 to +0.222), but much of that gap is base rates: Haiku beats the
+  transcript-free baseline by 0.17 within domain, and only by 0.01 pooled.
+- TF-IDF vs the fine-tuned Laya mean: +0.036 within domain (−0.033 to +0.101), +0.042 pooled
+  (−0.013 to +0.096). A tie on these runs. On the full test split, seeds 42 and 44 are
+  significantly worse than TF-IDF on both measures.
+- Fine-tuned Laya vs Haiku: the mean leads by +0.040 within domain (−0.062 to +0.154); per seed
+  +0.002, +0.101 (−0.004 to +0.219, the closest to a clear lead) and +0.018. Pooled, the mean
+  leads by +0.096 (+0.006 to +0.189), again a gap that mostly disappears within domain.
+- Every bootstrap in this experiment uses 1,000 resamples of whole scenarios and seed 20261002. These
+  numbers are in `results/chart_claims.json` and `results/report_finetune.json`.
 
 ## Question and target
 
@@ -137,6 +155,9 @@ Each rule was fixed before the test split was scored:
   with mean and range. **No seed is picked**, the headline uses the mean, and the paired
   bootstrap runs per seed.
 - **Test:** each final model scored the test split **once**.
+- **Not pre-registered:** within-domain AUROC, the two transcript-free baselines and the TF-IDF
+  variants without control tokens were added in a post-hoc audit, after the test results. They
+  change how the results are read, not which model, wording, setting or seed was used.
 
 **Setting selection on calibration** (730 runs, 88 failed):
 
@@ -148,36 +169,58 @@ Each rule was fixed before the test split was scored:
 
 ## Results on the full test split (2,169 runs)
 
-| model | AUROC (95% CI) | recall at 10% review | ECE | Brier | latency p50 / p95 |
-|---|---|---|---|---|---|
-| TF-IDF, full run | 0.815 (0.711-0.878) | 0.40 | 0.040 | 0.106 | 3.1 / 5.1 ms |
-| **TF-IDF, last 1,024 tokens** | **0.840** (0.742-0.899) | **0.43** | 0.048 | 0.093 | 1.6 / 2.2 ms |
-| Laya zero-shot (refit T) | 0.498 (0.440-0.561) | 0.10 | 0.353 | 0.254 | 93.5 / 95.6 ms |
-| Laya fine-tuned, seed 42 | 0.751 (0.660-0.821) | 0.31 | 0.034 | 0.116 | 92 / 95 ms |
-| Laya fine-tuned, seed 43 | 0.827 (0.734-0.888) | 0.43 | 0.037 | 0.097 | 103 / 108 ms |
-| Laya fine-tuned, seed 44 | 0.747 (0.663-0.808) | 0.38 | 0.124 | 0.136 | 103 / 108 ms |
-| **Laya fine-tuned, mean (range)** | **0.775** (0.747-0.827) | 0.37 (0.31-0.43) | 0.065 (0.034-0.124) | 0.116 | |
+| model | AUROC within domain (95% CI) | AUROC pooled (95% CI) | recall at 10% review | ECE | Brier | latency p50 / p95 |
+|---|---|---|---|---|---|---|
+| TF-IDF, full run | 0.773 (0.668-0.856) | 0.815 (0.711-0.878) | 0.40 | 0.040 | 0.106 | 4.1 / 8.5 ms |
+| **TF-IDF, last 1,024 tokens** | **0.791** (0.687-0.874) | **0.840** (0.742-0.899) | **0.43** | 0.048 | 0.093 | 1.9 / 3.8 ms |
+| Laya zero-shot (refit T) | 0.519 (0.452-0.591) | 0.498 (0.440-0.561) | 0.10 | 0.353 | 0.254 | 93.5 / 95.6 ms |
+| Laya fine-tuned, seed 42 | 0.706 (0.621-0.796) | 0.751 (0.660-0.821) | 0.31 | 0.034 | 0.116 | 92 / 95 ms |
+| Laya fine-tuned, seed 43 | 0.766 (0.679-0.848) | 0.827 (0.734-0.888) | 0.43 | 0.037 | 0.097 | 103 / 108 ms |
+| Laya fine-tuned, seed 44 | 0.714 (0.626-0.793) | 0.747 (0.663-0.808) | 0.38 | 0.124 | 0.136 | 103 / 108 ms |
+| **Laya fine-tuned, mean (range)** | **0.729** (0.706-0.766) | **0.775** (0.747-0.827) | 0.37 (0.31-0.43) | 0.065 (0.034-0.124) | 0.116 | |
+| *Baseline: failure rate per domain + agent* | 0.581 (0.536-0.625) | 0.699 (0.591-0.768) | 0.19 | 0.025 | 0.122 | ~0 |
+| *Baseline: failure rate per domain* | 0.500 | 0.670 (0.523-0.753) | 0.16 | 0.032 | 0.124 | ~0 |
 
-- The best possible recall within a 10% review budget is 0.66 (budget ÷ failure rate).
+- The best possible recall within a 10% review budget is 0.66 (budget ÷ failure rate). Runs tied
+  at the cut-off share the remaining review slots evenly, so the result doesn't depend on input
+  order (this matters for Haiku, which answers in whole percentages).
 - 95% CIs come from 1,000 bootstrap resamples of whole scenarios.
 - Latency: TF-IDF on a 4-core laptop CPU, Laya on a Kaggle T4, Haiku as API round trips over a
   home connection.
 
-**Paired bootstrap, AUROC(fine-tuned) − AUROC(TF-IDF last 1,024)**, resampling scenarios:
+**Paired bootstrap, fine-tuned − TF-IDF last 1,024**, resampling scenarios:
 
-| seed | full test | 497 sample |
-|---|---|---|
-| 42 | −0.089 (−0.148 to −0.035) | −0.067 (−0.138 to −0.004) |
-| 43 | −0.013 (−0.057 to +0.028) | +0.017 (−0.032 to +0.071) |
-| 44 | −0.093 (−0.142 to −0.043) | −0.077 (−0.141 to −0.010) |
+| seed | within domain, full test | within domain, 497 sample | pooled, full test | pooled, 497 sample |
+|---|---|---|---|---|
+| 42 | −0.085 (−0.159 to −0.012) | −0.074 (−0.160 to +0.012) | −0.089 (−0.148 to −0.035) | −0.067 (−0.138 to −0.004) |
+| 43 | −0.024 (−0.082 to +0.035) | +0.025 (−0.046 to +0.099) | −0.013 (−0.057 to +0.028) | +0.017 (−0.032 to +0.071) |
+| 44 | −0.077 (−0.147 to −0.009) | −0.058 (−0.128 to +0.010) | −0.093 (−0.142 to −0.043) | −0.077 (−0.141 to −0.010) |
 
-**AUROC by domain** (497 sample):
+**AUROC by domain** (497 sample; failures per domain: airline 13, retail 52, telecom 11):
 
 | model | airline | retail | telecom |
 |---|---|---|---|
 | TF-IDF, last 1,024 tokens | 0.707 | 0.800 | 0.837 |
 | Haiku judge | 0.497 | 0.699 | 0.924 |
 | Laya zero-shot | 0.519 | 0.533 | 0.668 |
+| *Baseline: failure rate per domain + agent* | 0.544 | 0.538 | 0.650 |
+
+**Without the simulator's control tokens.** τ²-bench's simulated customer ends a conversation by
+writing `###STOP###`, `###TRANSFER###` or `###OUT-OF-SCOPE###`. On the test split, runs whose
+last customer message is `###STOP###` fail 25.9% of the time, against 12.7% with no token, and
+the token is in 2,166 of 2,169 tails. Real traffic has no such tokens, so TF-IDF was retrained
+with all three stripped from both training and test text (`experiment.py tfidf`, the `-notok`
+variants):
+
+| full test split | AUROC within domain | AUROC pooled |
+|---|---|---|
+| TF-IDF, last 1,024 tokens | 0.791 | 0.840 |
+| TF-IDF, last 1,024 tokens, tokens stripped | 0.789 | 0.839 |
+| TF-IDF, full run | 0.773 | 0.815 |
+| TF-IDF, full run, tokens stripped | 0.774 | 0.817 |
+
+On the 497 sample, the stripped tail variant scores 0.799 within domain and 0.840 pooled, the
+same as with the tokens. TF-IDF does not depend on them.
 
 ## Caveats
 
@@ -186,8 +229,15 @@ Each rule was fixed before the test split was scored:
 - **The calibration split is small:** 18 scenarios, 88 failures. It chose S1 at 0.841 calibration
   AUROC, but the same seed-42 model scored 0.751 on test. Selection on so few scenarios is noisy.
 - **Telecom has only 15 scenarios** (5 in test), so its per-domain numbers have very wide
-  intervals. The pooled AUROC also partly reflects differences in failure rate between domains
-  (telecom 5.6%, retail 23.7%).
+  intervals.
+- **Pooled AUROC rewards base rates.** Domains fail at very different rates (telecom 5.6%,
+  retail 23.7%), and a transcript-free lookup table reaches 0.67-0.70 pooled. Compare models on
+  within-domain AUROC; the pooled numbers favour the trained models over the blind Haiku judge.
+- **Benchmark artifacts in the text.** All runs share one simulated customer (gpt-5.2), whose
+  control tokens correlate with the outcome. Stripping them left TF-IDF unchanged (see above),
+  but Laya and Haiku were scored with the tokens present. TF-IDF's strongest features are mostly
+  environment state from tool results ("cannot send", "available true"), so it partly reads
+  what the tools reported, not only how the agent behaved.
 - **Hard labels.** Laya's official recipe was built for soft teacher distributions; here it was
   trained on 0/1 rewards with no class reweighting, as in the original.
 - **Seed 44 was unstable.** Its training loss rose to 1.01 in the last epoch, and its fitted
@@ -213,7 +263,8 @@ python tau2/data_check.py normalize    # -> data/runs.jsonl
 python tau2/data_check.py report       # inventory -> data_report.json
 python tau2/experiment.py corpus       # -> data/corpus.jsonl (the corpus decisions above)
 python tau2/experiment.py split        # task-disjoint split (committed as data/split.json)
-python tau2/experiment.py tfidf
+python tau2/experiment.py tfidf        # 4 variants: full run / last 1,024 tokens, each with and without control tokens
+python tau2/experiment.py baselines    # transcript-free failure-rate baselines
 python tau2/kaggle/build_package.py    # Kaggle dataset; then: kaggle datasets version -p tau2/kaggle/upload -m ...
 #   Laya zero-shot on Kaggle (kaggle/laya_tau2.ipynb) -> python tau2/experiment.py import-kaggle
 #   Laya fine-tuning on Kaggle: build_package.py kernel --full --phase select | --phase seeds --setting S1
