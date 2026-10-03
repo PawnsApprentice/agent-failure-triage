@@ -4,6 +4,8 @@
 is statistically tied with the LLM judge, but so is a free 1.9 ms TF-IDF model, so neither is
 worth the extra cost on this data.**
 
+[![Animation: four models rank the same 497 test runs within each domain; a square lights up when a reviewed run really failed](tau2/results/hunt.gif)](tau2/results/hunt.mp4)
+
 Within-domain AUROC compares failed and successful runs from the same domain only. Pooled
 across domains, the numbers look more decisive (TF-IDF 0.84, Haiku 0.70), but a lookup table of
 domain and agent failure rates, which never reads a transcript, already scores 0.69 pooled.

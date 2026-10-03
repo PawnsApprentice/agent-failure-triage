@@ -272,6 +272,7 @@ python tau2/kaggle/build_package.py    # Kaggle dataset; then: kaggle datasets v
 python tau2/haiku_judge.py estimate && python tau2/haiku_judge.py run   # needs an Anthropic API key in .env
 python tau2/experiment.py report && python tau2/experiment.py report-matched && python tau2/experiment.py report-finetune
 python tau2/make_chart.py
+python tau2/make_animation.py          # results/hunt.mp4 + hunt.gif (needs ffmpeg and JetBrains Mono)
 ```
 
 Step 0 is `python laya_check/typed_decisions.py`. The format check, which rendered runs in
