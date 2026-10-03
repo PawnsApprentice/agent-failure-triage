@@ -30,7 +30,7 @@ DATASET = f"{KAGGLE_USER}/laya-tau2"
 KERNEL = f"{KAGGLE_USER}/laya-tau2-finetune"
 
 sys.path.insert(0, str(REPO_ROOT / "tau2"))
-import experiment as ex  # noqa: E402
+import experiment as ex
 
 CODE = {
     "common/__init__.py": "common/__init__.py",
@@ -75,21 +75,21 @@ def build_dataset() -> None:
 def build_kernel(smoke: bool, pipeline_args: list[str]) -> None:
     args = ["pipeline"] + pipeline_args + (["--smoke"] if smoke else [])
     cells = [
-        ("markdown", "# Fine-tune laya-typed on tau2 (Laya's official RLCD trainer, 2xT4)\n\n"
-                     f"Run: `finetune_kaggle.py {' '.join(args)}`. All logic is in `finetune_kaggle.py` inside the "
-                     "`laya-tau2` dataset; outputs land in `/kaggle/working`."),
-        ("code", "!pip install -q laya==0.3.21\n"
-                 "import torch\n"
-                 "print([torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())])"),
-        ("code", "import glob, subprocess, sys, zipfile\n"
-                 "scripts = glob.glob('/kaggle/input/**/finetune_kaggle.py', recursive=True)\n"
-                 "if not scripts:  # dataset zip not unpacked by Kaggle: unpack it ourselves\n"
-                 "    zips = glob.glob('/kaggle/input/**/laya-tau2.zip', recursive=True)\n"
-                 "    assert zips, 'laya-tau2 dataset not attached'\n"
-                 "    zipfile.ZipFile(zips[0]).extractall('/tmp/laya-tau2')\n"
-                 "    scripts = ['/tmp/laya-tau2/finetune_kaggle.py']\n"
-                 "print('running', scripts[0])\n"
-                 f"subprocess.run([sys.executable, scripts[0]] + {args!r}, check=True)"),
+        ("markdown", ("# Fine-tune laya-typed on tau2 (Laya's official RLCD trainer, 2xT4)\n\n"
+                      f"Run: `finetune_kaggle.py {' '.join(args)}`. All logic is in `finetune_kaggle.py` inside the "
+                      "`laya-tau2` dataset; outputs land in `/kaggle/working`.")),
+        ("code", ("!pip install -q laya==0.3.21\n"
+                  "import torch\n"
+                  "print([torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())])")),
+        ("code", ("import glob, subprocess, sys, zipfile\n"
+                  "scripts = glob.glob('/kaggle/input/**/finetune_kaggle.py', recursive=True)\n"
+                  "if not scripts:  # dataset zip not unpacked by Kaggle: unpack it ourselves\n"
+                  "    zips = glob.glob('/kaggle/input/**/laya-tau2.zip', recursive=True)\n"
+                  "    assert zips, 'laya-tau2 dataset not attached'\n"
+                  "    zipfile.ZipFile(zips[0]).extractall('/tmp/laya-tau2')\n"
+                  "    scripts = ['/tmp/laya-tau2/finetune_kaggle.py']\n"
+                  "print('running', scripts[0])\n"
+                  f"subprocess.run([sys.executable, scripts[0]] + {args!r}, check=True)")),
     ]
     nb = {"cells": [{"id": f"cell-{i}", "cell_type": t, "metadata": {}, "source": s.splitlines(keepends=True),
                      **({"outputs": [], "execution_count": None} if t == "code" else {})}

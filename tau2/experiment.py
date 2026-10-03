@@ -28,9 +28,17 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-from common import laya_agent  # noqa: E402
-from common.metrics import (  # noqa: E402
-    auroc, binary_nll, brier, cluster_bootstrap_ci, ece, fit_temperature, logit, percentile, recall_at_budget,
+from common import laya_agent
+from common.metrics import (
+    auroc,
+    binary_nll,
+    brier,
+    cluster_bootstrap_ci,
+    ece,
+    fit_temperature,
+    logit,
+    percentile,
+    recall_at_budget,
 )
 
 HERE = Path(__file__).parent

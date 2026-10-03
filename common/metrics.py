@@ -3,6 +3,7 @@ Wilson CI, reliability bins, latency percentiles, and temperature fitting on log
 from __future__ import annotations
 
 import math
+from itertools import pairwise
 
 TEMP_MIN, TEMP_MAX = 0.5, 5.0  # laya.common's clamp range for temperatures
 
@@ -32,7 +33,7 @@ def ece(preds: list[float], labels: list[float], bins: int = 10) -> float:
     classes that carries the same information without folding both sides onto one axis)."""
     edges = [i / bins for i in range(bins + 1)]
     total = 0.0
-    for lo, hi in zip(edges[:-1], edges[1:]):
+    for lo, hi in pairwise(edges):
         sel = [(p, y) for p, y in zip(preds, labels) if (lo == 0 and p <= hi) or (lo < p <= hi)]
         if not sel:
             continue
@@ -46,7 +47,7 @@ def ece_confidence(conf: list[float], correct: list[bool], bins: int = 15) -> fl
     """Multiclass ECE on top-class confidence, same definition as laya's research/scripts/bench_local.py."""
     edges = [i / bins for i in range(bins + 1)]
     total = 0.0
-    for lo, hi in zip(edges[:-1], edges[1:]):
+    for lo, hi in pairwise(edges):
         sel = [(c, k) for c, k in zip(conf, correct) if lo < c <= hi]
         if sel:
             total += len(sel) / len(conf) * abs(sum(c for c, _ in sel) / len(sel) - sum(k for _, k in sel) / len(sel))
@@ -79,7 +80,7 @@ def reliability_bins(preds: list[float], labels: list[float], bins: int = 10, mi
     leftover tail is carried into the last bin. Returns (mean prediction, observed rate, n)."""
     edges = [i / bins for i in range(bins + 1)]
     raw = [[(p, y) for p, y in zip(preds, labels) if (lo == 0 and p <= hi) or (lo < p <= hi)]
-           for lo, hi in zip(edges[:-1], edges[1:])]
+           for lo, hi in pairwise(edges)]
     merged, carry = [], []
     for sel in raw:
         carry = carry + sel
@@ -135,7 +136,7 @@ def cluster_bootstrap_ci(clusters: list[list], stat, n_boot: int = 1000, seed: i
     for _ in range(n_boot):
         items = [x for _ in clusters for x in clusters[rng.randrange(len(clusters))]]
         v = stat(items)
-        if v == v:  # skip NaN
+        if not math.isnan(v):
             values.append(v)
     values.sort()
     if not values:
@@ -156,7 +157,7 @@ def paired_cluster_bootstrap(clusters: list[list[tuple]], stat, n_boot: int = 10
     values = []
     for _ in range(n_boot):
         v = diff([x for _ in clusters for x in clusters[rng.randrange(len(clusters))]])
-        if v == v:
+        if not math.isnan(v):
             values.append(v)
     values.sort()
     return {"diff": diff([x for c in clusters for x in c]),

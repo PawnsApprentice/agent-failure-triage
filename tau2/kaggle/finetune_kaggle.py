@@ -66,13 +66,13 @@ def rows_for(split: str, smoke: bool) -> list[dict]:
 
 
 def prepare(out_dir: Path, smoke: bool) -> None:
+    import experiment as ex
     import torch
     from huggingface_hub import snapshot_download
     from laya.agent import _fix_tokenizer_config
     from laya.common import QTYPES, build_sequence, render_options
     from transformers import AutoTokenizer
 
-    import experiment as ex
     from common import laya_agent
 
     # Official notebook, cell 3: tokenizer + config from the checkpoint we fine-tune.
@@ -125,6 +125,7 @@ def prepare(out_dir: Path, smoke: bool) -> None:
 
 def score(model_dir: str, split: str, out_jsonl: Path, smoke: bool) -> None:
     import experiment as ex
+
     from common import laya_agent
 
     laya_agent.LAYA_CHECKPOINTS["finetuned"] = model_dir
@@ -164,10 +165,10 @@ def _calibration_scores(pred_path: Path, rows: list[dict]) -> dict:
 
 
 def pipeline(smoke: bool, phase: str = "all", setting_arg: str | None = None) -> None:
+    import experiment as ex
     import torch
     from huggingface_hub import snapshot_download
 
-    import experiment as ex
     from common import laya_agent
 
     OUT.mkdir(parents=True, exist_ok=True)

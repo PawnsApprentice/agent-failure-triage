@@ -19,9 +19,10 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-import experiment as ex  # noqa: E402  (also puts the repo root on sys.path)
-from common import laya_agent  # noqa: E402
-from common.metrics import auroc, cluster_bootstrap_ci  # noqa: E402
+import experiment as ex  # also puts the repo root on sys.path
+
+from common import laya_agent
+from common.metrics import auroc, cluster_bootstrap_ci
 
 RAW = HERE / "data" / "raw" / "bucket"
 OUT_PATH = ex.RESULTS / "format_check_W3.jsonl"

@@ -208,10 +208,10 @@ CLAIMS_SUCCESS_RE = re.compile(
     r"modified|booked|issued|completed|exchanged|returned|submitted|resolved|fixed|applied|placed|added|removed)|"
     r"(?:I(?:'ve| have)|we(?:'ve| have)) (?:now |successfully |also )?(?:processed|updated|cancell?ed|refunded|changed|"
     r"modified|booked|issued|completed|exchanged|returned|submitted|resolved|fixed|applied|placed|added|removed)|"
-    r"is now (?:\w+ ){0,3}(?:cancell?ed|updated|active|resolved|working|fixed|restored|enabled))\b", re.I)
+    r"is now (?:\w+ ){0,3}(?:cancell?ed|updated|active|resolved|working|fixed|restored|enabled))\b", re.IGNORECASE)
 ADMITS_FAILURE_RE = re.compile(
     r"\b(I(?:'m| am) (?:unable|not able)|I can(?:not|'t)|unable to|not (?:possible|able)|cannot be|"
-    r"(?:transfer|transferring) you|human (?:agent|representative)|I(?:'m| am) sorry,? but)\b", re.I)
+    r"(?:transfer|transferring) you|human (?:agent|representative)|I(?:'m| am) sorry,? but)\b", re.IGNORECASE)
 
 
 def closing_class(msg: str) -> str:

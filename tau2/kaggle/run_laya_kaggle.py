@@ -29,10 +29,11 @@ SMOKE = int(os.environ.get("LAYA_SMOKE", "0"))  # >0: only N items per stage, to
 for p in (ROOT, ROOT / "tau2", ROOT / "laya_check"):
     sys.path.insert(0, str(p))
 
-from common import laya_agent  # noqa: E402  (sets USE_TF=0 before transformers is imported)
-from common.metrics import auroc  # noqa: E402
-import experiment as ex  # noqa: E402
-import typed_decisions as td  # noqa: E402
+import experiment as ex  # imports common.laya_agent first, which sets USE_TF=0 before transformers loads
+import typed_decisions as td
+
+from common import laya_agent
+from common.metrics import auroc
 
 TYPED_DECISIONS_PARQUET = ROOT / "laya_check" / "data" / "all" / "test-00000-of-00001.parquet"
 CPU_STEP0 = ROOT / "reference" / "step0_cpu_predictions.jsonl"
@@ -44,8 +45,8 @@ def log(msg: str) -> None:
 
 
 def run_info() -> dict:
-    import torch
     import laya
+    import torch
 
     agent = laya_agent.get_agent(ex.LAYA_CHECKPOINT)
     info = {"laya": laya.__version__, "torch": torch.__version__, "device": str(agent.device),

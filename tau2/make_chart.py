@@ -12,8 +12,9 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
-import experiment as ex  # noqa: E402  (also puts the repo root on sys.path)
-from common.metrics import auroc, cluster_bootstrap_ci  # noqa: E402
+import experiment as ex  # also puts the repo root on sys.path
+
+from common.metrics import auroc, cluster_bootstrap_ci
 
 OUT_PATH = ex.RESULTS / "auroc_by_model.png"
 SURFACE, INK, INK_2, MUTED, ACCENT = "#fcfcfb", "#0b0b0b", "#52514e", "#a3a29c", "#2a78d6"  # dataviz reference palette
