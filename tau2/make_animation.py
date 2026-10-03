@@ -27,7 +27,7 @@ import experiment as ex  # also puts the repo root on sys.path
 import make_chart
 from PIL import Image, ImageDraw, ImageFont
 
-W, H, FPS, SECONDS = 1080, 1350, 30, 15
+W, H, FPS, SECONDS = 1080, 1350, 30, 17
 BG, INK, DIM, FAINT, LINE = "#000000", "#e8e6e1", "#8a8780", "#1c1c1c", "#3a3a3a"
 ORANGE, ORANGE_HOT, OK = "#ff8a1f", "#ffd29a", "#4a4a4a"
 FONT_DIR = Path("/usr/share/fonts/TTF")
@@ -39,7 +39,7 @@ LANE_Y = (205, 452, 752, 1002)
 REPO_URL = "github.com/PawnsApprentice/agent-failure-triage"
 
 # timeline (seconds): intro, sweep to the 10% mark, hold, sweep to the end, hold, end card
-T_START, T_10, T_10_END, T_FULL, T_CARD = 0.8, 3.8, 4.8, 11.2, 12.0
+T_START, T_10, T_10_END, T_FULL, T_CARD = 0.8, 3.8, 6.8, 13.2, 14.0
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
