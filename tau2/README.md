@@ -1,6 +1,7 @@
 # Can Laya replace an LLM judge for flagging failed agent runs?
 
-**Short answer: not on this data.** We compared four ways to flag customer-service agent runs
+**Short answer: zero-shot, no. Fine-tuned Laya is statistically tied with the LLM judge, but so
+is a free 1.9 ms TF-IDF model, so neither is worth the extra cost on this data.** We compared four ways to flag customer-service agent runs
 that failed: a TF-IDF + logistic regression baseline, Laya zero-shot, Laya fine-tuned with its
 official trainer, and Claude Haiku 4.5 as an LLM judge. Every model was evaluated on tasks it
 never saw. The TF-IDF baseline on the last 1,024 tokens of each run scored highest on average.

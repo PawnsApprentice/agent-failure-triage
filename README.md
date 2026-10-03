@@ -1,9 +1,8 @@
 # agent-failure-triage
 
-**On 497 held-out τ²-bench agent runs scored by every model, a TF-IDF classifier (1.9 ms per
-run) reached within-domain AUROC 0.80, against 0.72 for Claude Haiku 4.5 as a judge and 0.73 to
-0.82 for fine-tuned Laya across 3 seeds (mean 0.76). The differences among these three are not
-statistically clear. Zero-shot Laya was near chance (0.56).**
+**Can Laya replace an LLM judge for flagging failed agent runs? Zero-shot, no. Fine-tuned Laya
+is statistically tied with the LLM judge, but so is a free 1.9 ms TF-IDF model, so neither is
+worth the extra cost on this data.**
 
 Within-domain AUROC compares failed and successful runs from the same domain only. Pooled
 across domains, the numbers look more decisive (TF-IDF 0.84, Haiku 0.70), but a lookup table of
