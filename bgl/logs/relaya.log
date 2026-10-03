@@ -1,0 +1,90 @@
+scanning BGL log (this streams from the zip, no full extraction)...
+  ...500,000 lines scanned
+  ...1,000,000 lines scanned
+  ...1,500,000 lines scanned
+  ...2,000,000 lines scanned
+  ...2,500,000 lines scanned
+  ...3,000,000 lines scanned
+  ...3,500,000 lines scanned
+  ...4,000,000 lines scanned
+  ...4,500,000 lines scanned
+total lines scanned: 4,747,963
+unique stripped messages: 358,356
+dropping 3 messages seen with both alert and non-alert labels
+usable unique messages: 48,998 alert, 309,355 non-alert
+
+unique masked templates in the full dataset: 97 alert, 11166 non-alert
+split: eval=50+50  calibration=15+15  training=32 alert + 2000 non-alert templates
+TF-IDF template-level training set: 2032 rows (32 page / 2000 ignore)
+calibration templates also present in the row-level 200 eval set: 2/30
+loading Laya checkpoint 'convaiinnovations/laya'...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 1849.18it/s]
+/home/ha/Work/Laya/.venv/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+  laya-base legacy: nll shipped-T=1.8608  nll refit-T=1.0656 (T=5.000)  brier refit-T=0.3606
+  laya-base W1: nll shipped-T=0.7213  nll refit-T=0.7012 (T=5.000)  brier refit-T=0.2540
+  laya-base W2: nll shipped-T=0.7261  nll refit-T=0.7012 (T=5.000)  brier refit-T=0.2540
+  laya-base W3: nll shipped-T=0.6938  nll refit-T=0.6925 (T=4.820)  brier refit-T=0.2497
+  laya-base: chose W3
+loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 1752.45it/s]
+  laya-typed legacy: nll shipped-T=0.6443  nll refit-T=0.6442 (T=1.917)  brier refit-T=0.2282
+  laya-typed W1: nll shipped-T=0.7529  nll refit-T=0.7065 (T=5.000)  brier refit-T=0.2567
+  laya-typed W2: nll shipped-T=0.7780  nll refit-T=0.7149 (T=5.000)  brier refit-T=0.2607
+  laya-typed W3: nll shipped-T=0.7544  nll refit-T=0.7068 (T=5.000)  brier refit-T=0.2568
+  laya-typed: chose W1
+wrote /home/ha/Work/Laya/laya_wording.json
+
+##### template-level, n=100 #####
+running laya-base on 100 alerts...
+  laya-base: 50/100
+  laya-base: 100/100
+running laya-typed on 100 alerts...
+  laya-typed: 50/100
+  laya-typed: 100/100
+wrote 600 result rows to /home/ha/Work/Laya/results.jsonl
+
+##### row-level, n=200 #####
+running laya-base on 200 alerts...
+  laya-base: 50/200
+  laya-base: 100/200
+  laya-base: 150/200
+  laya-base: 200/200
+running laya-typed on 200 alerts...
+  laya-typed: 50/200
+  laya-typed: 100/200
+  laya-typed: 150/200
+  laya-typed: 200/200
+wrote 1200 result rows to /home/ha/Work/Laya/results_rowlevel200.jsonl
+
+=== confusion matrix (template-level, n=100) ===
+laya-base-raw    TP= 26 FP= 41 TN=  9 FN= 24  (n=100)
+laya-base-refit  TP= 26 FP= 41 TN=  9 FN= 24  (n=100)
+laya-typed       TP= 49 FP= 49 TN=  1 FN=  1  (n=100)
+haiku            TP= 43 FP= 14 TN= 36 FN=  7  (n=100)
+qwen             TP= 49 FP= 48 TN=  2 FN=  1  (n=100)
+tfidf            TP= 35 FP=  0 TN= 50 FN= 15  (n=100)
+
+=== summary (template-level, n=100, page/ignore decision only) ===
+laya-base-raw    n=100  accuracy=0.350  95% CI=[0.264,0.447]  brier=0.260  ece=0.182  p50=533ms  p95=726ms
+laya-base-refit  n=100  accuracy=0.350  95% CI=[0.264,0.447]  brier=0.253  ece=0.163  p50=531ms  p95=730ms
+laya-typed       n=100  accuracy=0.500  95% CI=[0.404,0.596]  brier=0.256  ece=0.057  p50=511ms  p95=715ms
+haiku            n=100  accuracy=0.790  95% CI=[0.700,0.858]  brier=0.161  ece=0.128  p50=1057ms  p95=2721ms
+qwen             n=100  accuracy=0.510  95% CI=[0.413,0.606]  brier=0.377  ece=0.407  p50=1843ms  p95=3793ms
+tfidf            n=100  accuracy=0.850  95% CI=[0.767,0.907]  brier=0.114  ece=0.181  p50=1ms  p95=1ms
+
+=== confusion matrix (row-level, n=200) ===
+laya-base-raw    TP= 20 FP= 45 TN= 55 FN= 80  (n=200)
+laya-base-refit  TP= 20 FP= 45 TN= 55 FN= 80  (n=200)
+laya-typed       TP= 99 FP= 92 TN=  8 FN=  1  (n=200)
+haiku            TP= 98 FP= 16 TN= 84 FN=  2  (n=200)
+qwen             TP= 99 FP= 98 TN=  2 FN=  1  (n=200)
+tfidf            TP= 89 FP=  0 TN=100 FN= 11  (n=200)
+
+=== summary (row-level, n=200, page/ignore decision only) ===
+laya-base-raw    n=200  accuracy=0.375  95% CI=[0.311,0.444]  brier=0.254  ece=0.199  p50=562ms  p95=991ms
+laya-base-refit  n=200  accuracy=0.375  95% CI=[0.311,0.444]  brier=0.251  ece=0.140  p50=563ms  p95=989ms
+laya-typed       n=200  accuracy=0.535  95% CI=[0.466,0.603]  brier=0.246  ece=0.050  p50=528ms  p95=957ms
+haiku            n=200  accuracy=0.910  95% CI=[0.862,0.942]  brier=0.079  ece=0.091  p50=1034ms  p95=2469ms
+qwen             n=200  accuracy=0.505  95% CI=[0.436,0.574]  brier=0.446  ece=0.458  p50=2044ms  p95=5010ms
+tfidf            n=200  accuracy=0.945  95% CI=[0.904,0.969]  brier=0.037  ece=0.072  p50=1ms  p95=1ms

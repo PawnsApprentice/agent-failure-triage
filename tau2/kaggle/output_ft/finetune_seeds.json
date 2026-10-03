@@ -1,0 +1,56 @@
+{
+  "setting": "S1",
+  "seeds": [
+    43,
+    44
+  ],
+  "info": {
+    "smoke": false,
+    "phase": "seeds",
+    "gpus": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "settings": {
+      "S1": [
+        4,
+        2.5e-05,
+        0.0001
+      ],
+      "S2": [
+        2,
+        2.5e-05,
+        0.0001
+      ],
+      "S3": [
+        4,
+        1.25e-05,
+        5e-05
+      ]
+    },
+    "selection_seed": 42,
+    "extra_seeds": [
+      43,
+      44
+    ],
+    "fitted_temperatures": {
+      "S1_seed43": [
+        1.2,
+        1.2,
+        2.119860887527466
+      ],
+      "S1_seed44": [
+        1.2,
+        1.2,
+        5.0
+      ]
+    }
+  },
+  "timings": {
+    "prepare_s": 98.23901605606079,
+    "train_S1_seed43_s": 3568.7180898189545,
+    "score_test_S1_seed43_s": 254.60907888412476,
+    "train_S1_seed44_s": 3462.5318155288696,
+    "score_test_S1_seed44_s": 254.56521558761597
+  }
+}

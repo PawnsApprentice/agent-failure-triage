@@ -1,0 +1,95 @@
+{
+  "selection_rule": "lowest calibration-set NLL at each wording's own refit temperature; 'legacy' (original two-clause question) is shown for reference only",
+  "criteria": {
+    "true": "page an on-call engineer now",
+    "false": "safe to ignore, no page needed"
+  },
+  "wordings": {
+    "W1": "This log line indicates a failure that requires an on-call engineer to act now.",
+    "W2": "This alert should page an on-call engineer immediately.",
+    "W3": "This system log message reports a problem serious enough to wake up an on-call engineer at night.",
+    "legacy": "Should this alert page an on-call engineer right now (true), or can it be safely ignored (false)?"
+  },
+  "laya-base": {
+    "chosen": "W3",
+    "scores": {
+      "legacy": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 1.8608441911801956,
+        "nll_refit": 1.0656006756224592,
+        "brier_shipped": 0.48209440233336665,
+        "brier_refit": 0.3605613127121826,
+        "n": 30
+      },
+      "W1": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 0.7213269208338212,
+        "nll_refit": 0.7011826680361121,
+        "brier_shipped": 0.263829761,
+        "brier_refit": 0.25401113539857406,
+        "n": 30
+      },
+      "W2": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 0.7261118636646537,
+        "nll_refit": 0.7012017222620429,
+        "brier_shipped": 0.26642721033333333,
+        "brier_refit": 0.254048722307753,
+        "n": 30
+      },
+      "W3": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 4.82,
+        "nll_shipped": 0.6937843303226873,
+        "nll_refit": 0.6925291131742474,
+        "brier_shipped": 0.25034904966666666,
+        "brier_refit": 0.24969405438324233,
+        "n": 30
+      }
+    }
+  },
+  "laya-typed": {
+    "chosen": "W1",
+    "scores": {
+      "legacy": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 1.9175,
+        "nll_shipped": 0.6442969676022706,
+        "nll_refit": 0.6442470675855961,
+        "brier_shipped": 0.22811462866666668,
+        "brier_refit": 0.2282203341391839,
+        "n": 30
+      },
+      "W1": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 0.7528930526002002,
+        "nll_refit": 0.7065310604354998,
+        "brier_shipped": 0.2785350856666666,
+        "brier_refit": 0.25665305548074957,
+        "n": 30
+      },
+      "W2": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 0.777958375996627,
+        "nll_refit": 0.7148588196377206,
+        "brier_shipped": 0.28985770233333336,
+        "brier_refit": 0.26074969145876314,
+        "n": 30
+      },
+      "W3": {
+        "t_shipped": 1.983399510383606,
+        "t_refit": 5.0,
+        "nll_shipped": 0.7544240118294389,
+        "nll_refit": 0.7067791264049829,
+        "brier_shipped": 0.27936809533333334,
+        "brier_refit": 0.2567866461079011,
+        "n": 30
+      }
+    }
+  }
+}

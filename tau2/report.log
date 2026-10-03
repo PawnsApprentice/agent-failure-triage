@@ -1,0 +1,106 @@
+loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 1524.65it/s]
+/home/ha/Work/Laya/.venv/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+tokenizing 30123 runs...
+wrote /home/ha/Work/Laya/tau2/data_report.json
+
+=== tau2 data check: 30123 runs ===
+source bucket  runs= 19291 failed= 8799 (46.3%)
+source repo    runs= 10832 failed= 3651 (33.7%)
+
+domain               runs  failed  fail%  tasks  tok med    p90     max  >1024  nonbin
+airline              2400     704  29.4%     50     3579   7539   37067  93.4%       0
+banking_knowledge   10395    7258  70.9%     97    49034 113556  762505  98.3%       0
+retail               5472    1283  23.8%    114     3995   6410   36728  97.3%       0
+telecom              8208    2117  26.0%    114     2717   5005  132373  87.8%       0
+telecom-workflow     3648    1088  29.8%    114     1441   3190    9680  69.5%       0
+ALL                 30123                           4208  72677  762505  91.4%
+
+domain | agent model | variant                                                  runs  failed  fail%
+airline | anthropic/claude-opus-4-5-20251101 | default                           200      32  16.0%
+airline | claude-3-7-sonnet-20250219 | default                                   200     100  50.0%
+airline | claude-sonnet-4-5-20250514 | default                                   200      56  28.0%
+airline | gpt-4.1-2025-04-14 | default                                           200      88  44.0%
+airline | gpt-4.1-mini-2025-04-14 | base                                         200      99  49.5%
+airline | gpt-5.2 | default                                                      400      73  18.2%
+airline | o4-mini-2025-04-16 | default                                           200      82  41.0%
+airline | openai/glm-5-fp8 | default                                             200      35  17.5%
+airline | openai/qwen3.5-397b | default                                          200      37  18.5%
+airline | vertex_ai/gemini-3-flash-preview | default                             200      66  33.0%
+airline | vertex_ai/gemini-3-pro-preview | default                               200      36  18.3%
+banking_knowledge | anthropic/claude-fable-5 | default                           388     185  55.2%
+banking_knowledge | anthropic/claude-opus-4-7 | default                          388     232  59.8%
+banking_knowledge | anthropic/claude-opus-4-8 | default                          388     234  60.3%
+banking_knowledge | anthropic/claude-opus-5 | default                            388     199  51.3%
+banking_knowledge | claude-opus-4-5 | default                                    388     305  78.6%
+banking_knowledge | claude-opus-4-6 | default                                    388     293  75.5%
+banking_knowledge | claude-sonnet-4-5-20250929 | default                         388     301  77.6%
+banking_knowledge | gpt-5.2 | default                                            776     632  81.4%
+banking_knowledge | openai/glm-5-fp8 | default                                   307     273  88.9%
+banking_knowledge | openai/qwen3.5-397b | default                                388     293  88.5%
+banking_knowledge | openai/responses/gpt-5.4 | default                           388     269  69.3%
+banking_knowledge | openai/responses/gpt-5.5 | default                           388     214  55.4%
+banking_knowledge | openai/responses/gpt-5.6-sol | default                       388     182  52.4%
+banking_knowledge | openrouter/meta/muse-spark-1.1 | default                     388     231  59.5%
+banking_knowledge | openrouter/moonshotai/kimi-k3 | default                      388     244  62.9%
+banking_knowledge | openrouter/qwen/qwen3.8-max | default                        388     174  44.8%
+banking_knowledge | openrouter/thinkingmachines/inkling | default                388     291  75.0%
+banking_knowledge | openrouter/x-ai/grok-4.5 | default                           388     202  52.1%
+banking_knowledge | openrouter/z-ai/glm-5.2 | default                            388     244  62.9%
+banking_knowledge | vertex_ai/gemini-2.5-pro | default                           388     335  87.2%
+banking_knowledge | vertex_ai/gemini-3-flash-preview | default                   388     308  79.4%
+banking_knowledge | vertex_ai/gemini-3-pro-preview | default                     388     327  84.3%
+banking_knowledge | vertex_ai/gemini-3.1-pro-preview | default                   388     299  77.5%
+banking_knowledge | xai/grok-4-1-fast-reasoning | default                        388     339  87.6%
+banking_knowledge | xai/grok-4-fast-reasoning | default                          388     333  85.8%
+banking_knowledge | xai/grok-4.20-0309-reasoning | default                       388     319  82.4%
+retail | anthropic/claude-opus-4-5-20251101 | default                            456      93  20.4%
+retail | anthropic/claude-sonnet-4-5-20250929 | default                          456     126  27.6%
+retail | claude-3-7-sonnet-20250219 | default                                    456      97  21.3%
+retail | gpt-4.1-2025-04-14 | default                                            456     118  25.9%
+retail | gpt-4.1-mini-2025-04-14 | base                                          456     155  34.0%
+retail | gpt-5.2 | default                                                       912     181  21.0%
+retail | o4-mini-2025-04-16 | default                                            456     130  28.5%
+retail | openai/glm-5-fp8 | default                                              456     116  25.7%
+retail | openai/qwen3.5-397b | default                                           456      71  15.6%
+retail | vertex_ai/gemini-3-flash-preview | default                              456     106  23.2%
+retail | vertex_ai/gemini-3-pro-preview | default                                456      90  20.6%
+telecom | claude-3-7-sonnet-20250219 | default                                   456     231  50.7%
+telecom | claude-opus-4-5-20251101 | default                                     456      35   7.7%
+telecom | claude-sonnet-4-5-20250929 | default                                   456      69  15.1%
+telecom | gpt-4.1-2025-04-14 | default                                           456     300  65.8%
+telecom | gpt-4.1-2025-04-14 | no-user                                           456     221  48.5%
+telecom | gpt-4.1-2025-04-14 | no-user-op                                        456     127  27.9%
+telecom | gpt-4.1-2025-04-14 | op                                                456     124  27.2%
+telecom | gpt-4.1-mini-2025-04-14 | base                                         456     256  56.1%
+telecom | gpt-5.2 | default                                                      912     222  24.3%
+telecom | o4-mini-2025-04-16 | default                                           456     264  57.9%
+telecom | o4-mini-2025-04-16 | no-user                                           456     149  32.7%
+telecom | o4-mini-2025-04-16 | no-user-op                                        456       5   1.1%
+telecom | o4-mini-2025-04-16 | op                                                456      17   3.7%
+telecom | openai/glm-5-fp8 | default                                             456       8   2.0%
+telecom | openai/qwen3.5-397b | default                                          456      10   2.2%
+telecom | vertex_ai/gemini-3-flash-preview | default                             456      40   8.8%
+telecom | vertex_ai/gemini-3-pro-preview | default                               456      39   8.6%
+telecom-workflow | gpt-4.1-2025-04-14 | default                                  456     220  48.2%
+telecom-workflow | gpt-4.1-2025-04-14 | no-user                                  456     144  31.6%
+telecom-workflow | gpt-4.1-2025-04-14 | no-user-op                               456     115  25.2%
+telecom-workflow | gpt-4.1-2025-04-14 | op                                       456     198  43.4%
+telecom-workflow | o4-mini-2025-04-16 | default                                  456     185  40.6%
+telecom-workflow | o4-mini-2025-04-16 | no-user                                  456     127  27.9%
+telecom-workflow | o4-mini-2025-04-16 | no-user-op                               456      44   9.6%
+telecom-workflow | o4-mini-2025-04-16 | op                                       456      55  12.1%
+
+termination reasons, failed runs:    {'user_stop': 10929, 'agent_stop': 932, 'too_many_errors': 425, 'max_steps': 164}
+termination reasons, succeeded runs: {'user_stop': 14664, 'agent_stop': 2716}
+task ids whose content differs across files: {'airline': 22, 'banking_knowledge': 1, 'retail': 21, 'telecom': 0, 'telecom-workflow': 0}
+
+closing message of failed runs (regex; sizing only, not a label):
+  airline            claims_success=  299 (42%)  admits_failure=  188  ambiguous=  217  of 704
+  banking_knowledge  claims_success= 2031 (28%)  admits_failure= 1346  ambiguous= 3881  of 7258
+  retail             claims_success=  512 (40%)  admits_failure=  229  ambiguous=  542  of 1283
+  telecom            claims_success=   15 (1%)  admits_failure= 1467  ambiguous=  635  of 2117
+  telecom-workflow   claims_success=    1 (0%)  admits_failure=  636  ambiguous=  451  of 1088
+
+paper cross-check (arXiv 2606.09863: 9876 runs, 1730 failures): ours 8896 runs, 1541 failures from 8 bucket submissions

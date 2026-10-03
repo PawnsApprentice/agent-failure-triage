@@ -1,0 +1,208 @@
+[{"stream_name":"stderr","time":7.264106884,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.26418198,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.264189082,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.264193014,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.851551784,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.8516082990000005,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.851614527,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.8516177670000005,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":11.202448743,"data":"\u001b[?25l     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/79.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m79.7/79.7 kB\u001b[0m \u001b[31m3.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":11.506168148,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/214.5 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m214.5/214.5 kB\u001b[0m \u001b[31m10.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":20.721938473,"data":"\u001b[?25hGPU: Tesla T4\n"}
+,{"stream_name":"stdout","time":20.923880965,"data":"running /kaggle/input/datasets/pawnsapprentice/laya-tau2/run_laya_kaggle.py\n"}
+,{"stream_name":"stderr","time":21.127936415,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stderr","time":21.127960524,"data":"\n"}
+,{"stream_name":"stderr","time":21.127965018,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stderr","time":21.972368127,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":21.972406594,"data":"\n"}
+,{"stream_name":"stderr","time":21.972411142,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":55.16261199,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stderr","time":55.162651079,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stderr","time":55.16265696,"data":"\n"}
+,{"stream_name":"stderr","time":55.162666691,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stderr","time":55.162677777,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":55.645459137,"data":"running on cuda (Tesla T4), dtype torch.float16, laya 0.3.21\n"}
+,{"stream_name":"stdout","time":104.032441485,"data":"Step 0 on this device: accuracy 0.7665 (published 0.766, gap +0.0005) by type {'noul': 0.8567, 'choice': 0.7333, 'score': 0.7238}\n"}
+,{"stream_name":"stdout","time":104.033459247,"data":"  agreement with local CPU decisions 1999/2000 = 0.9995, max |prob diff| 0.0028\n"}
+,{"stream_name":"stdout","time":104.430122988,"data":"tau2: 736 calibration runs, 2180 test runs\n"}
+,{"stream_name":"stderr","time":104.632417083,"data":"Laya W1: state room 983 tokens; 0 done, 736 to go -\u003e laya_calibration_W1.jsonl\n"}
+,{"stream_name":"stderr","time":104.632477925,"data":"\n"}
+,{"stream_name":"stderr","time":104.632485382,"data":"Laya W1: state room 983 tokens; 0 done, 736 to go -\u003e laya_calibration_W1.jsonl\n"}
+,{"stream_name":"stderr","time":114.147147349,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":114.147184306,"data":"\n"}
+,{"stream_name":"stderr","time":114.147189459,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":123.710366114,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":123.710403553,"data":"\n"}
+,{"stream_name":"stderr","time":123.710409834,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":133.38996324,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":133.390009168,"data":"\n"}
+,{"stream_name":"stderr","time":133.390013989,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":143.108769569,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":143.108812189,"data":"\n"}
+,{"stream_name":"stderr","time":143.108818647,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":153.117661354,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":153.117696793,"data":"\n"}
+,{"stream_name":"stderr","time":153.117702535,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":163.382677982,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":163.382737068,"data":"\n"}
+,{"stream_name":"stderr","time":163.382743667,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":173.433787285,"data":"  700/736\n"}
+,{"stream_name":"stderr","time":173.433824771,"data":"\n"}
+,{"stream_name":"stderr","time":173.433832161,"data":"  700/736\n"}
+,{"stream_name":"stderr","time":177.011433403,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":177.011482517,"data":"  W1: nll shipped=0.7230 refit=0.7042 (T=5.000)  calibration AUROC=0.529\n"}
+,{"stream_name":"stderr","time":177.011489493,"data":"Laya W2: state room 975 tokens; 0 done, 736 to go -\u003e laya_calibration_W2.jsonl\n"}
+,{"stream_name":"stderr","time":177.011495786,"data":"\n"}
+,{"stream_name":"stderr","time":177.011501006,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":177.011505981,"data":"  W1: nll shipped=0.7230 refit=0.7042 (T=5.000)  calibration AUROC=0.529\n"}
+,{"stream_name":"stderr","time":177.011511279,"data":"Laya W2: state room 975 tokens; 0 done, 736 to go -\u003e laya_calibration_W2.jsonl\n"}
+,{"stream_name":"stderr","time":187.173938351,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":187.173972737,"data":"\n"}
+,{"stream_name":"stderr","time":187.1739786,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":196.933435233,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":196.933480465,"data":"\n"}
+,{"stream_name":"stderr","time":196.933500121,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":206.668550693,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":206.668580727,"data":"\n"}
+,{"stream_name":"stderr","time":206.668585705,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":216.281991913,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":216.282057749,"data":"\n"}
+,{"stream_name":"stderr","time":216.282074641,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":226.04332877,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":226.043375304,"data":"\n"}
+,{"stream_name":"stderr","time":226.043381265,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":235.944835275,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":235.94486995,"data":"\n"}
+,{"stream_name":"stderr","time":235.944873979,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":245.691865086,"data":"  700/736\n"}
+,{"stream_name":"stderr","time":245.691895157,"data":"\n"}
+,{"stream_name":"stderr","time":245.691900146,"data":"  700/736\n"}
+,{"stream_name":"stderr","time":249.209396787,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":249.209434992,"data":"  W2: nll shipped=0.7195 refit=0.7031 (T=5.000)  calibration AUROC=0.536\n"}
+,{"stream_name":"stderr","time":249.209439565,"data":"Laya W3: state room 981 tokens; 0 done, 736 to go -\u003e laya_calibration_W3.jsonl\n"}
+,{"stream_name":"stderr","time":249.209443031,"data":"\n"}
+,{"stream_name":"stderr","time":249.209445941,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":249.20944874,"data":"  W2: nll shipped=0.7195 refit=0.7031 (T=5.000)  calibration AUROC=0.536\n"}
+,{"stream_name":"stderr","time":249.209452729,"data":"Laya W3: state room 981 tokens; 0 done, 736 to go -\u003e laya_calibration_W3.jsonl\n"}
+,{"stream_name":"stderr","time":259.315029148,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":259.315085239,"data":"\n"}
+,{"stream_name":"stderr","time":259.315094328,"data":"  100/736\n"}
+,{"stream_name":"stderr","time":269.173172728,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":269.173210611,"data":"\n"}
+,{"stream_name":"stderr","time":269.173215783,"data":"  200/736\n"}
+,{"stream_name":"stderr","time":278.97184704,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":278.971897271,"data":"\n"}
+,{"stream_name":"stderr","time":278.971903559,"data":"  300/736\n"}
+,{"stream_name":"stderr","time":288.612694322,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":288.612739063,"data":"\n"}
+,{"stream_name":"stderr","time":288.61274345,"data":"  400/736\n"}
+,{"stream_name":"stderr","time":298.353262669,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":298.353315361,"data":"\n"}
+,{"stream_name":"stderr","time":298.35332015,"data":"  500/736\n"}
+,{"stream_name":"stderr","time":308.215134605,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":308.215170012,"data":"\n"}
+,{"stream_name":"stderr","time":308.215174089,"data":"  600/736\n"}
+,{"stream_name":"stderr","time":317.890459723,"data":"  700/736\n"}
+,{"stream_name":"stderr","time":317.890527389,"data":"\n"}
+,{"stream_name":"stderr","time":317.890536524,"data":"  700/736\n"}
+,{"stream_name":"stdout","time":321.422844132,"data":"chosen wording W3: \"The agent left the customer's problem unresolved or handled it incorrectly.\"\n"}
+,{"stream_name":"stdout","time":321.423836445,"data":"  W1: NLL shipped-T 0.7230, refit-T 0.7042 (T 5.000), calibration AUROC 0.529\n"}
+,{"stream_name":"stdout","time":321.424745877,"data":"  W2: NLL shipped-T 0.7195, refit-T 0.7031 (T 5.000), calibration AUROC 0.536\n"}
+,{"stream_name":"stdout","time":321.425712133,"data":"  W3: NLL shipped-T 0.7139, refit-T 0.7005 (T 5.000), calibration AUROC 0.547\n"}
+,{"stream_name":"stderr","time":321.431848395,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":321.431873174,"data":"  W3: nll shipped=0.7139 refit=0.7005 (T=5.000)  calibration AUROC=0.547\n"}
+,{"stream_name":"stderr","time":321.431878331,"data":"chose W3: \"The agent left the customer's problem unresolved or handled it incorrectly.\"\n"}
+,{"stream_name":"stderr","time":321.431882429,"data":"Laya W3: state room 981 tokens; 0 done, 2180 to go -\u003e pred_laya-typed_W3.jsonl\n"}
+,{"stream_name":"stderr","time":321.43188637,"data":"\n"}
+,{"stream_name":"stderr","time":321.431889509,"data":"  736/736\n"}
+,{"stream_name":"stderr","time":321.431892706,"data":"  W3: nll shipped=0.7139 refit=0.7005 (T=5.000)  calibration AUROC=0.547\n"}
+,{"stream_name":"stderr","time":321.431896055,"data":"chose W3: \"The agent left the customer's problem unresolved or handled it incorrectly.\"\n"}
+,{"stream_name":"stderr","time":321.431899621,"data":"Laya W3: state room 981 tokens; 0 done, 2180 to go -\u003e pred_laya-typed_W3.jsonl\n"}
+,{"stream_name":"stderr","time":331.314240973,"data":"  100/2180\n"}
+,{"stream_name":"stderr","time":331.314274367,"data":"\n"}
+,{"stream_name":"stderr","time":331.314279929,"data":"  100/2180\n"}
+,{"stream_name":"stderr","time":341.19903341,"data":"  200/2180\n"}
+,{"stream_name":"stderr","time":341.199090762,"data":"\n"}
+,{"stream_name":"stderr","time":341.199094846,"data":"  200/2180\n"}
+,{"stream_name":"stderr","time":351.062741448,"data":"  300/2180\n"}
+,{"stream_name":"stderr","time":351.062779134,"data":"\n"}
+,{"stream_name":"stderr","time":351.062784368,"data":"  300/2180\n"}
+,{"stream_name":"stderr","time":360.764907558,"data":"  400/2180\n"}
+,{"stream_name":"stderr","time":360.764982684,"data":"\n"}
+,{"stream_name":"stderr","time":360.764989906,"data":"  400/2180\n"}
+,{"stream_name":"stderr","time":370.512243142,"data":"  500/2180\n"}
+,{"stream_name":"stderr","time":370.512280021,"data":"\n"}
+,{"stream_name":"stderr","time":370.51228469,"data":"  500/2180\n"}
+,{"stream_name":"stderr","time":380.380184569,"data":"  600/2180\n"}
+,{"stream_name":"stderr","time":380.380229977,"data":"\n"}
+,{"stream_name":"stderr","time":380.38026734,"data":"  600/2180\n"}
+,{"stream_name":"stderr","time":389.915936899,"data":"  700/2180\n"}
+,{"stream_name":"stderr","time":389.915967449,"data":"\n"}
+,{"stream_name":"stderr","time":389.915972991,"data":"  700/2180\n"}
+,{"stream_name":"stderr","time":399.72358552,"data":"  800/2180\n"}
+,{"stream_name":"stderr","time":399.723637663,"data":"\n"}
+,{"stream_name":"stderr","time":399.723645431,"data":"  800/2180\n"}
+,{"stream_name":"stderr","time":409.525140368,"data":"  900/2180\n"}
+,{"stream_name":"stderr","time":409.525175184,"data":"\n"}
+,{"stream_name":"stderr","time":409.525180573,"data":"  900/2180\n"}
+,{"stream_name":"stderr","time":419.166634946,"data":"  1000/2180\n"}
+,{"stream_name":"stderr","time":419.166676384,"data":"\n"}
+,{"stream_name":"stderr","time":419.166682371,"data":"  1000/2180\n"}
+,{"stream_name":"stderr","time":428.947194195,"data":"  1100/2180\n"}
+,{"stream_name":"stderr","time":428.947226263,"data":"\n"}
+,{"stream_name":"stderr","time":428.947233231,"data":"  1100/2180\n"}
+,{"stream_name":"stderr","time":438.782839235,"data":"  1200/2180\n"}
+,{"stream_name":"stderr","time":438.782875735,"data":"\n"}
+,{"stream_name":"stderr","time":438.782882458,"data":"  1200/2180\n"}
+,{"stream_name":"stderr","time":448.167507391,"data":"  1300/2180\n"}
+,{"stream_name":"stderr","time":448.167579064,"data":"\n"}
+,{"stream_name":"stderr","time":448.167584342,"data":"  1300/2180\n"}
+,{"stream_name":"stderr","time":457.986642013,"data":"  1400/2180\n"}
+,{"stream_name":"stderr","time":457.986676955,"data":"\n"}
+,{"stream_name":"stderr","time":457.986680633,"data":"  1400/2180\n"}
+,{"stream_name":"stderr","time":467.859546801,"data":"  1500/2180\n"}
+,{"stream_name":"stderr","time":467.859575322,"data":"\n"}
+,{"stream_name":"stderr","time":467.860026078,"data":"  1500/2180\n"}
+,{"stream_name":"stderr","time":477.712832842,"data":"  1600/2180\n"}
+,{"stream_name":"stderr","time":477.712873364,"data":"\n"}
+,{"stream_name":"stderr","time":477.712877556,"data":"  1600/2180\n"}
+,{"stream_name":"stderr","time":487.544458986,"data":"  1700/2180\n"}
+,{"stream_name":"stderr","time":487.544493774,"data":"\n"}
+,{"stream_name":"stderr","time":487.544498925,"data":"  1700/2180\n"}
+,{"stream_name":"stderr","time":497.407780481,"data":"  1800/2180\n"}
+,{"stream_name":"stderr","time":497.407811446,"data":"\n"}
+,{"stream_name":"stderr","time":497.407816985,"data":"  1800/2180\n"}
+,{"stream_name":"stderr","time":506.934923809,"data":"  1900/2180\n"}
+,{"stream_name":"stderr","time":506.934970541,"data":"\n"}
+,{"stream_name":"stderr","time":506.934979261,"data":"  1900/2180\n"}
+,{"stream_name":"stderr","time":516.610853141,"data":"  2000/2180\n"}
+,{"stream_name":"stderr","time":516.610902133,"data":"\n"}
+,{"stream_name":"stderr","time":516.610908553,"data":"  2000/2180\n"}
+,{"stream_name":"stderr","time":526.217168916,"data":"  2100/2180\n"}
+,{"stream_name":"stderr","time":526.217231157,"data":"\n"}
+,{"stream_name":"stderr","time":526.217238277,"data":"  2100/2180\n"}
+,{"stream_name":"stdout","time":533.87196208,"data":"test: 2180 runs scored, AUROC (shipped T) 0.498\n"}
+,{"stream_name":"stdout","time":533.929395658,"data":"CPU vs GPU on 81 tau2 calibration runs (W1): max |diff| 0.0013, mean 0.0001, same side of 0.5 81/81\n"}
+,{"stream_name":"stdout","time":533.971674242,"data":"wrote /kaggle/working/laya_predictions.csv; total 8.6 min\n"}
+,{"stream_name":"stderr","time":533.991399839,"data":"  2180/2180\n"}
+,{"stream_name":"stderr","time":533.991422804,"data":"\n"}
+,{"stream_name":"stderr","time":533.991429006,"data":"  2180/2180\n"}
+,{"stream_name":"stdout","time":534.00702905,"data":"__notebook__.ipynb 27248 bytes\n"}
+,{"stream_name":"stdout","time":534.007072884,"data":"laya_calibration_W1.jsonl 130255 bytes\n"}
+,{"stream_name":"stdout","time":534.00708071,"data":"laya_calibration_W2.jsonl 130250 bytes\n"}
+,{"stream_name":"stdout","time":534.007085282,"data":"laya_calibration_W3.jsonl 130233 bytes\n"}
+,{"stream_name":"stdout","time":534.007091048,"data":"laya_predictions.csv 565360 bytes\n"}
+,{"stream_name":"stdout","time":534.007099106,"data":"laya_wording.json 1218 bytes\n"}
+,{"stream_name":"stdout","time":534.007102125,"data":"parity.json 124 bytes\n"}
+,{"stream_name":"stdout","time":534.007105001,"data":"pred_laya-typed_W3.jsonl 375325 bytes\n"}
+,{"stream_name":"stdout","time":534.007107893,"data":"run_info.json 134 bytes\n"}
+,{"stream_name":"stdout","time":534.007110805,"data":"step0_gpu.json 320 bytes\n"}
+,{"stream_name":"stderr","time":539.675177812,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":539.675217551,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":539.829669063,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":539.829702704,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":540.430817597,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":540.733033947,"data":"[NbConvertApp] Writing 45488 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":543.113173011,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":543.886366234,"data":"[NbConvertApp] Writing 315589 bytes to __results__.html\n"}
+]

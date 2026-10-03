@@ -1,0 +1,508 @@
+[{"stream_name":"stderr","time":6.2422200740000005,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":6.242265738,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":7.059969506,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.060029175,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.060035871,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.060040653,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.644665138,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.644697378,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.644701125,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.644703893,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.867226843,"data":"\u001b[?25l     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/79.7 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m79.7/79.7 kB\u001b[0m \u001b[31m3.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":11.120384849,"data":"\u001b[?25h\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/214.5 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m214.5/214.5 kB\u001b[0m \u001b[31m10.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":20.076926269,"data":"\u001b[?25h['Tesla T4', 'Tesla T4']\n"}
+,{"stream_name":"stdout","time":20.277303608,"data":"running /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py\n"}
+,{"stream_name":"stdout","time":22.922469507,"data":"GPUs: ['Tesla T4', 'Tesla T4']  phase: select\n"}
+,{"stream_name":"stdout","time":23.124314846,"data":"GPUs: ['Tesla T4', 'Tesla T4']  phase: select\n"}
+,{"stream_name":"stderr","time":23.43932378,"data":"\rFetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]\rFetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":23.456834198,"data":"\rFetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":23.659186335,"data":"\rFetching 7 files:  14%|█▍        | 1/7 [00:00\u003c00:01,  3.24it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":23.659218717,"data":"\rFetching 7 files:  14%|█▍        | 1/7 [00:00\u003c00:01,  3.24it/s]\n"}
+,{"stream_name":"stderr","time":23.659239617,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":28.148032123,"data":"\rFetching 7 files:  14%|█▍        | 1/7 [00:00\u003c00:01,  3.24it/s]\rFetching 7 files:  57%|█████▋    | 4/7 [00:04\u003c00:03,  1.30s/it]\rFetching 7 files: 100%|██████████| 7/7 [00:04\u003c00:00,  1.43it/s]\n"}
+,{"stream_name":"stdout","time":28.148934400999998,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py prepare /tmp/laya_ft\n"}
+,{"stream_name":"stderr","time":28.350653429,"data":"\rFetching 7 files:  57%|█████▋    | 4/7 [00:04\u003c00:03,  1.30s/it]\rFetching 7 files: 100%|██████████| 7/7 [00:04\u003c00:00,  1.43it/s]\n"}
+,{"stream_name":"stderr","time":28.350681521,"data":"\n"}
+,{"stream_name":"stderr","time":28.350686477,"data":"\rFetching 7 files:  57%|█████▋    | 4/7 [00:04\u003c00:03,  1.30s/it]\rFetching 7 files: 100%|██████████| 7/7 [00:04\u003c00:00,  1.43it/s]\n"}
+,{"stream_name":"stdout","time":28.351463905,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py prepare /tmp/laya_ft\n"}
+,{"stream_name":"stdout","time":51.342335163,"data":"\n"}
+,{"stream_name":"stdout","time":51.342973804,"data":"Fetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":51.342992068,"data":"Fetching 7 files: 100%|██████████| 7/7 [00:00\u003c00:00, 16256.99it/s]\n"}
+,{"stream_name":"stdout","time":51.545988499,"data":"\n"}
+,{"stream_name":"stdout","time":51.546014516,"data":"Fetching 7 files:   0%|          | 0/7 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":51.546020348,"data":"Fetching 7 files: 100%|██████████| 7/7 [00:00\u003c00:00, 16256.99it/s]\n"}
+,{"stream_name":"stdout","time":51.732884727,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":51.935126801,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":51.969895261,"data":"\n"}
+,{"stream_name":"stdout","time":51.971018869,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":51.971038763,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 4804.47it/s]\n"}
+,{"stream_name":"stdout","time":52.172237458,"data":"\n"}
+,{"stream_name":"stdout","time":52.172269722,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":52.172275713,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 4804.47it/s]\n"}
+,{"stream_name":"stdout","time":57.468449138,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":57.468484096,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":57.671532159,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":57.671581597,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":95.015633584,"data":"prepared 4604 train items (745 failed); first 50 match laya's inference encoding\n"}
+,{"stream_name":"stdout","time":95.220074207,"data":"prepared 4604 train items (745 failed); first 50 match laya's inference encoding\n"}
+,{"stream_name":"stdout","time":101.491181428,"data":"prepared 730 calibration items (88 failed); first 50 match laya's inference encoding\n"}
+,{"stream_name":"stdout","time":101.693578228,"data":"prepared 730 calibration items (88 failed); first 50 match laya's inference encoding\n"}
+,{"stream_name":"stdout","time":105.588909531,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S1_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 4 2.5e-05 0.0001 42\n"}
+,{"stream_name":"stdout","time":105.791050917,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S1_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 4 2.5e-05 0.0001 42\n"}
+,{"stream_name":"stdout","time":107.501500312,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":107.501835483,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":107.501855965,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":107.501863377,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":107.703986233,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":107.704018943,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":107.704023841,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":107.704027585,"data":"W1002 15:42:51.448000 103 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":107.883052423,"data":"[W1002 15:42:51.839359587 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":108.086407955,"data":"[W1002 15:42:51.839359587 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":115.628438414,"data":"[W1002 15:42:59.584390416 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":115.720305991,"data":"[W1002 15:42:59.676679474 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":115.830219499,"data":"[W1002 15:42:59.584390416 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":115.830265357,"data":"[W1002 15:42:59.676679474 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":121.19447005,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 4 epochs\n"}
+,{"stream_name":"stdout","time":121.397011743,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 4 epochs\n"}
+,{"stream_name":"stdout","time":133.155776909,"data":"[rank1]:W1002 15:43:17.103000 112 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode\n"}
+,{"stream_name":"stdout","time":133.198662263,"data":"[rank0]:W1002 15:43:17.145000 111 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode\n"}
+,{"stream_name":"stdout","time":133.367066589,"data":"[rank1]:W1002 15:43:17.103000 112 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode\n"}
+,{"stream_name":"stdout","time":133.367091463,"data":"[rank0]:W1002 15:43:17.145000 111 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode\n"}
+,{"stream_name":"stdout","time":136.812933228,"data":"[rank1]:[W1002 15:43:20.769096263 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":136.812970198,"data":"[rank0]:[W1002 15:43:20.769131254 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":137.015254151,"data":"[rank1]:[W1002 15:43:20.769096263 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":137.01529563,"data":"[rank0]:[W1002 15:43:20.769131254 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":145.130208907,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":145.130280587,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":145.130286484,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":145.130291622,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":145.332793759,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":145.3328278,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":145.332832212,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":145.332837246,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":259.285108207,"data":"  Epoch 1/4 | Step 50 | Loss: 0.8124 | Reward: 0.274 | LR: 2.49e-05\n"}
+,{"stream_name":"stdout","time":259.490859264,"data":"  Epoch 1/4 | Step 50 | Loss: 0.8124 | Reward: 0.274 | LR: 2.49e-05\n"}
+,{"stream_name":"stdout","time":399.737397076,"data":"  Epoch 1/4 | Step 100 | Loss: 0.6394 | Reward: -0.088 | LR: 2.45e-05\n"}
+,{"stream_name":"stdout","time":399.94349053,"data":"  Epoch 1/4 | Step 100 | Loss: 0.6394 | Reward: -0.088 | LR: 2.45e-05\n"}
+,{"stream_name":"stdout","time":541.367988433,"data":"  Epoch 1/4 | Step 150 | Loss: -0.1464 | Reward: 0.704 | LR: 2.40e-05\n"}
+,{"stream_name":"stdout","time":541.57399192,"data":"  Epoch 1/4 | Step 150 | Loss: -0.1464 | Reward: 0.704 | LR: 2.40e-05\n"}
+,{"stream_name":"stdout","time":682.283987324,"data":"  Epoch 1/4 | Step 200 | Loss: 0.6825 | Reward: -0.203 | LR: 2.32e-05\n"}
+,{"stream_name":"stdout","time":682.489989793,"data":"  Epoch 1/4 | Step 200 | Loss: 0.6825 | Reward: -0.203 | LR: 2.32e-05\n"}
+,{"stream_name":"stdout","time":823.98372207,"data":"  Epoch 1/4 | Step 250 | Loss: 0.2159 | Reward: 0.279 | LR: 2.23e-05\n"}
+,{"stream_name":"stdout","time":824.189578686,"data":"  Epoch 1/4 | Step 250 | Loss: 0.2159 | Reward: 0.279 | LR: 2.23e-05\n"}
+,{"stream_name":"stdout","time":930.274556212,"data":"=== Epoch 1/4 Completed in 809.1s | Avg Loss: 0.4321 ===\n"}
+,{"stream_name":"stdout","time":930.275625224,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":930.275649126,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":930.482957061,"data":"=== Epoch 1/4 Completed in 809.1s | Avg Loss: 0.4321 ===\n"}
+,{"stream_name":"stdout","time":930.482980076,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":930.482984726,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":932.0307362,"data":"  Saved rolling checkpoint (epoch 1/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":932.233402775,"data":"  Saved rolling checkpoint (epoch 1/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":1073.735404463,"data":"  Epoch 2/4 | Step 50 | Loss: 0.2030 | Reward: 0.318 | LR: 2.02e-05\n"}
+,{"stream_name":"stdout","time":1073.941829478,"data":"  Epoch 2/4 | Step 50 | Loss: 0.2030 | Reward: 0.318 | LR: 2.02e-05\n"}
+,{"stream_name":"stdout","time":1215.638091737,"data":"  Epoch 2/4 | Step 100 | Loss: -0.2011 | Reward: 0.689 | LR: 1.87e-05\n"}
+,{"stream_name":"stdout","time":1215.844999778,"data":"  Epoch 2/4 | Step 100 | Loss: -0.2011 | Reward: 0.689 | LR: 1.87e-05\n"}
+,{"stream_name":"stdout","time":1357.549162756,"data":"  Epoch 2/4 | Step 150 | Loss: 0.4341 | Reward: -0.080 | LR: 1.73e-05\n"}
+,{"stream_name":"stdout","time":1357.75583624,"data":"  Epoch 2/4 | Step 150 | Loss: 0.4341 | Reward: -0.080 | LR: 1.73e-05\n"}
+,{"stream_name":"stdout","time":1498.536695583,"data":"  Epoch 2/4 | Step 200 | Loss: 0.4485 | Reward: 0.271 | LR: 1.56e-05\n"}
+,{"stream_name":"stdout","time":1498.743491822,"data":"  Epoch 2/4 | Step 200 | Loss: 0.4485 | Reward: 0.271 | LR: 1.56e-05\n"}
+,{"stream_name":"stdout","time":1639.793549457,"data":"  Epoch 2/4 | Step 250 | Loss: 0.5131 | Reward: -0.200 | LR: 1.41e-05\n"}
+,{"stream_name":"stdout","time":1639.999851482,"data":"  Epoch 2/4 | Step 250 | Loss: 0.5131 | Reward: -0.200 | LR: 1.41e-05\n"}
+,{"stream_name":"stdout","time":1747.130349832,"data":"=== Epoch 2/4 Completed in 1625.9s | Avg Loss: 0.3729 ===\n"}
+,{"stream_name":"stdout","time":1747.339305178,"data":"=== Epoch 2/4 Completed in 1625.9s | Avg Loss: 0.3729 ===\n"}
+,{"stream_name":"stdout","time":1748.607047632,"data":"  Saved rolling checkpoint (epoch 2/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":1748.810502518,"data":"  Saved rolling checkpoint (epoch 2/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":1889.578846457,"data":"  Epoch 3/4 | Step 50 | Loss: 1.0905 | Reward: -0.791 | LR: 1.11e-05\n"}
+,{"stream_name":"stdout","time":1889.78594246,"data":"  Epoch 3/4 | Step 50 | Loss: 1.0905 | Reward: -0.791 | LR: 1.11e-05\n"}
+,{"stream_name":"stdout","time":2030.842405206,"data":"  Epoch 3/4 | Step 100 | Loss: 0.9392 | Reward: -0.350 | LR: 9.47e-06\n"}
+,{"stream_name":"stdout","time":2031.048931234,"data":"  Epoch 3/4 | Step 100 | Loss: 0.9392 | Reward: -0.350 | LR: 9.47e-06\n"}
+,{"stream_name":"stdout","time":2171.990422187,"data":"  Epoch 3/4 | Step 150 | Loss: 0.4082 | Reward: 0.094 | LR: 7.98e-06\n"}
+,{"stream_name":"stdout","time":2172.197195716,"data":"  Epoch 3/4 | Step 150 | Loss: 0.4082 | Reward: 0.094 | LR: 7.98e-06\n"}
+,{"stream_name":"stdout","time":2313.908066434,"data":"  Epoch 3/4 | Step 200 | Loss: 0.9160 | Reward: -0.784 | LR: 6.47e-06\n"}
+,{"stream_name":"stdout","time":2314.114945489,"data":"  Epoch 3/4 | Step 200 | Loss: 0.9160 | Reward: -0.784 | LR: 6.47e-06\n"}
+,{"stream_name":"stdout","time":2454.897609663,"data":"  Epoch 3/4 | Step 250 | Loss: 0.2479 | Reward: 0.266 | LR: 5.20e-06\n"}
+,{"stream_name":"stdout","time":2455.104212599,"data":"  Epoch 3/4 | Step 250 | Loss: 0.2479 | Reward: 0.266 | LR: 5.20e-06\n"}
+,{"stream_name":"stdout","time":2561.566807886,"data":"=== Epoch 3/4 Completed in 2440.4s | Avg Loss: 0.3643 ===\n"}
+,{"stream_name":"stdout","time":2561.774178065,"data":"=== Epoch 3/4 Completed in 2440.4s | Avg Loss: 0.3643 ===\n"}
+,{"stream_name":"stdout","time":2562.52570624,"data":"  Saved rolling checkpoint (epoch 3/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":2562.729223098,"data":"  Saved rolling checkpoint (epoch 3/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":2704.31642786,"data":"  Epoch 4/4 | Step 50 | Loss: 0.0309 | Reward: 0.694 | LR: 3.23e-06\n"}
+,{"stream_name":"stdout","time":2704.52394689,"data":"  Epoch 4/4 | Step 50 | Loss: 0.0309 | Reward: 0.694 | LR: 3.23e-06\n"}
+,{"stream_name":"stdout","time":2846.164815622,"data":"  Epoch 4/4 | Step 100 | Loss: 0.6307 | Reward: 0.397 | LR: 2.33e-06\n"}
+,{"stream_name":"stdout","time":2846.37210657,"data":"  Epoch 4/4 | Step 100 | Loss: 0.6307 | Reward: 0.397 | LR: 2.33e-06\n"}
+,{"stream_name":"stdout","time":2986.84725408,"data":"  Epoch 4/4 | Step 150 | Loss: 0.9293 | Reward: -0.392 | LR: 1.70e-06\n"}
+,{"stream_name":"stdout","time":2987.055162453,"data":"  Epoch 4/4 | Step 150 | Loss: 0.9293 | Reward: -0.392 | LR: 1.70e-06\n"}
+,{"stream_name":"stdout","time":3127.433142569,"data":"  Epoch 4/4 | Step 200 | Loss: 0.5092 | Reward: 0.744 | LR: 1.24e-06\n"}
+,{"stream_name":"stdout","time":3127.640180701,"data":"  Epoch 4/4 | Step 200 | Loss: 0.5092 | Reward: 0.744 | LR: 1.24e-06\n"}
+,{"stream_name":"stdout","time":3268.467269318,"data":"  Epoch 4/4 | Step 250 | Loss: -0.0353 | Reward: 0.747 | LR: 1.03e-06\n"}
+,{"stream_name":"stdout","time":3268.674497806,"data":"  Epoch 4/4 | Step 250 | Loss: -0.0353 | Reward: 0.747 | LR: 1.03e-06\n"}
+,{"stream_name":"stdout","time":3374.59562044,"data":"=== Epoch 4/4 Completed in 3253.4s | Avg Loss: 0.3026 ===\n"}
+,{"stream_name":"stdout","time":3374.805391633,"data":"=== Epoch 4/4 Completed in 3253.4s | Avg Loss: 0.3026 ===\n"}
+,{"stream_name":"stdout","time":3375.521139445,"data":"  Saved rolling checkpoint (epoch 4/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":3375.521170868,"data":"\n"}
+,{"stream_name":"stdout","time":3375.521178417,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":3375.724292236,"data":"  Saved rolling checkpoint (epoch 4/4) to /tmp/laya_ft/S1_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":3375.724320571,"data":"\n"}
+,{"stream_name":"stdout","time":3375.724349268,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":3433.889581818,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 2.204]\n"}
+,{"stream_name":"stdout","time":3434.094804712,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 2.204]\n"}
+,{"stream_name":"stdout","time":3435.132776526,"data":"Model successfully saved to /tmp/laya_ft/S1_seed42!\n"}
+,{"stream_name":"stdout","time":3435.33514387,"data":"Model successfully saved to /tmp/laya_ft/S1_seed42!\n"}
+,{"stream_name":"stdout","time":3438.38883334,"data":"S1 seed 42: trained in 55.5 min, fitted temperatures [1.2, 1.2, 2.203507423400879]\n"}
+,{"stream_name":"stdout","time":3438.388859722,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S1_seed42 calibration /kaggle/working/calibration_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":3438.591638591,"data":"S1 seed 42: trained in 55.5 min, fitted temperatures [1.2, 1.2, 2.203507423400879]\n"}
+,{"stream_name":"stdout","time":3438.59166987,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S1_seed42 calibration /kaggle/working/calibration_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":3440.910289707,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":3441.112643105,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":3441.522434699,"data":"\n"}
+,{"stream_name":"stdout","time":3441.522698337,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3441.522708994,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 57299.23it/s]\n"}
+,{"stream_name":"stdout","time":3441.725010788,"data":"\n"}
+,{"stream_name":"stdout","time":3441.725036047,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":3441.725046911,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 57299.23it/s]\n"}
+,{"stream_name":"stdout","time":3449.894108527,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":3449.894142497,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":3450.096832271,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":3450.096870635,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":3450.543017506,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":3450.548594843,"data":"loading Laya checkpoint '/tmp/laya_ft/S1_seed42'...\n"}
+,{"stream_name":"stdout","time":3450.745450944,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":3450.745520133,"data":"loading Laya checkpoint '/tmp/laya_ft/S1_seed42'...\n"}
+,{"stream_name":"stdout","time":3461.539851187,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":3461.742342082,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":3471.16548306,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":3471.372624429,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":3480.791983879,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":3480.994535246,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":3490.418141866,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":3490.621213268,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":3500.105894835,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":3500.308319519,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":3509.828400418,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":3510.034918926,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":3519.519192396,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":3519.721451648,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":3522.398221258,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":3522.600466524,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":3523.822162459,"data":"S1: calibration NLL 0.2916, AUROC 0.841\n"}
+,{"stream_name":"stdout","time":3523.822208676,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S2_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 2 2.5e-05 0.0001 42\n"}
+,{"stream_name":"stdout","time":3524.024477663,"data":"S1: calibration NLL 0.2916, AUROC 0.841\n"}
+,{"stream_name":"stdout","time":3524.024508948,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S2_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 2 2.5e-05 0.0001 42\n"}
+,{"stream_name":"stdout","time":3525.627700714,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":3525.627733651,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":3525.627739318,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":3525.627745271,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":3525.829699773,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":3525.829725731,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":3525.829728918,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":3525.829735952,"data":"W1002 16:39:49.575000 343 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":3526.002868097,"data":"[W1002 16:39:49.959173045 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3526.206309007,"data":"[W1002 16:39:49.959173045 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3533.615408735,"data":"[W1002 16:39:57.571631988 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3533.682452943,"data":"[W1002 16:39:57.638854541 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3533.817927327,"data":"[W1002 16:39:57.571631988 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3533.817959271,"data":"[W1002 16:39:57.638854541 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":3538.958720692,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 2 epochs\n"}
+,{"stream_name":"stdout","time":3539.161137794,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 2 epochs\n"}
+,{"stream_name":"stdout","time":3546.389211366,"data":"[rank0]:[W1002 16:40:10.345438092 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":3546.544127738,"data":"[rank1]:[W1002 16:40:10.500282042 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":3546.600728611,"data":"[rank0]:[W1002 16:40:10.345438092 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":3546.600755461,"data":"[rank1]:[W1002 16:40:10.500282042 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":3554.936477162,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":3554.936515292,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":3554.93652093,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":3554.936526542,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":3555.139163175,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":3555.139210554,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":3555.139214945,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":3555.1392196,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":3680.582584785,"data":"  Epoch 1/2 | Step 50 | Loss: 0.8932 | Reward: 0.195 | LR: 2.46e-05\n"}
+,{"stream_name":"stdout","time":3680.791782738,"data":"  Epoch 1/2 | Step 50 | Loss: 0.8932 | Reward: 0.195 | LR: 2.46e-05\n"}
+,{"stream_name":"stdout","time":3822.01653461,"data":"  Epoch 1/2 | Step 100 | Loss: 0.5616 | Reward: -0.031 | LR: 2.32e-05\n"}
+,{"stream_name":"stdout","time":3822.225570879,"data":"  Epoch 1/2 | Step 100 | Loss: 0.5616 | Reward: -0.031 | LR: 2.32e-05\n"}
+,{"stream_name":"stdout","time":3962.45440233,"data":"  Epoch 1/2 | Step 150 | Loss: -0.1289 | Reward: 0.685 | LR: 2.12e-05\n"}
+,{"stream_name":"stdout","time":3962.6670345,"data":"  Epoch 1/2 | Step 150 | Loss: -0.1289 | Reward: 0.685 | LR: 2.12e-05\n"}
+,{"stream_name":"stdout","time":4103.318266996,"data":"  Epoch 1/2 | Step 200 | Loss: 0.8250 | Reward: -0.340 | LR: 1.84e-05\n"}
+,{"stream_name":"stdout","time":4103.527842529,"data":"  Epoch 1/2 | Step 200 | Loss: 0.8250 | Reward: -0.340 | LR: 1.84e-05\n"}
+,{"stream_name":"stdout","time":4244.675082329,"data":"  Epoch 1/2 | Step 250 | Loss: 0.3079 | Reward: 0.193 | LR: 1.54e-05\n"}
+,{"stream_name":"stdout","time":4244.883872159,"data":"  Epoch 1/2 | Step 250 | Loss: 0.3079 | Reward: 0.193 | LR: 1.54e-05\n"}
+,{"stream_name":"stdout","time":4350.924156199,"data":"=== Epoch 1/2 Completed in 812.0s | Avg Loss: 0.4552 ===\n"}
+,{"stream_name":"stdout","time":4350.924544927,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":4350.924631447,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4351.137182614,"data":"=== Epoch 1/2 Completed in 812.0s | Avg Loss: 0.4552 ===\n"}
+,{"stream_name":"stdout","time":4351.137212039,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":4351.137219346,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4352.675131765,"data":"  Saved rolling checkpoint (epoch 1/2) to /tmp/laya_ft/S2_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":4352.878855041,"data":"  Saved rolling checkpoint (epoch 1/2) to /tmp/laya_ft/S2_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":4494.2770909,"data":"  Epoch 2/2 | Step 50 | Loss: 0.2403 | Reward: 0.337 | LR: 9.60e-06\n"}
+,{"stream_name":"stdout","time":4494.486904578,"data":"  Epoch 2/2 | Step 50 | Loss: 0.2403 | Reward: 0.337 | LR: 9.60e-06\n"}
+,{"stream_name":"stdout","time":4634.950182195,"data":"  Epoch 2/2 | Step 100 | Loss: -0.0672 | Reward: 0.659 | LR: 6.47e-06\n"}
+,{"stream_name":"stdout","time":4635.161479122,"data":"  Epoch 2/2 | Step 100 | Loss: -0.0672 | Reward: 0.659 | LR: 6.47e-06\n"}
+,{"stream_name":"stdout","time":4776.735738386,"data":"  Epoch 2/2 | Step 150 | Loss: 0.4106 | Reward: -0.013 | LR: 4.06e-06\n"}
+,{"stream_name":"stdout","time":4776.94562127,"data":"  Epoch 2/2 | Step 150 | Loss: 0.4106 | Reward: -0.013 | LR: 4.06e-06\n"}
+,{"stream_name":"stdout","time":4918.059928715,"data":"  Epoch 2/2 | Step 200 | Loss: 0.3491 | Reward: 0.367 | LR: 2.16e-06\n"}
+,{"stream_name":"stdout","time":4918.269385973,"data":"  Epoch 2/2 | Step 200 | Loss: 0.3491 | Reward: 0.367 | LR: 2.16e-06\n"}
+,{"stream_name":"stdout","time":5059.688379773,"data":"  Epoch 2/2 | Step 250 | Loss: 0.6486 | Reward: -0.281 | LR: 1.19e-06\n"}
+,{"stream_name":"stdout","time":5059.898490867,"data":"  Epoch 2/2 | Step 250 | Loss: 0.6486 | Reward: -0.281 | LR: 1.19e-06\n"}
+,{"stream_name":"stdout","time":5166.798646929,"data":"=== Epoch 2/2 Completed in 1627.8s | Avg Loss: 0.4159 ===\n"}
+,{"stream_name":"stdout","time":5167.008689792,"data":"=== Epoch 2/2 Completed in 1627.8s | Avg Loss: 0.4159 ===\n"}
+,{"stream_name":"stdout","time":5168.214732802,"data":"  Saved rolling checkpoint (epoch 2/2) to /tmp/laya_ft/S2_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":5168.214760954,"data":"\n"}
+,{"stream_name":"stdout","time":5168.214766287,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":5168.41817133,"data":"  Saved rolling checkpoint (epoch 2/2) to /tmp/laya_ft/S2_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":5168.418197608,"data":"\n"}
+,{"stream_name":"stdout","time":5168.418203634,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":5223.701207256,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 1.252]\n"}
+,{"stream_name":"stdout","time":5223.907895947,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 1.252]\n"}
+,{"stream_name":"stdout","time":5224.997318051,"data":"Model successfully saved to /tmp/laya_ft/S2_seed42!\n"}
+,{"stream_name":"stdout","time":5225.200094984,"data":"Model successfully saved to /tmp/laya_ft/S2_seed42!\n"}
+,{"stream_name":"stdout","time":5227.962072586,"data":"S2 seed 42: trained in 28.4 min, fitted temperatures [1.2, 1.2, 1.2523502111434937]\n"}
+,{"stream_name":"stdout","time":5227.962100641,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S2_seed42 calibration /kaggle/working/calibration_S2_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":5228.164984962,"data":"S2 seed 42: trained in 28.4 min, fitted temperatures [1.2, 1.2, 1.2523502111434937]\n"}
+,{"stream_name":"stdout","time":5228.165017486,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S2_seed42 calibration /kaggle/working/calibration_S2_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":5230.502447587,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":5230.705263749,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":5231.12208066,"data":"\n"}
+,{"stream_name":"stdout","time":5231.12260654,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5231.122629753,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 8648.05it/s]\n"}
+,{"stream_name":"stdout","time":5231.32428026,"data":"\n"}
+,{"stream_name":"stdout","time":5231.324309778,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":5231.324315912,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 8648.05it/s]\n"}
+,{"stream_name":"stdout","time":5239.513963174,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":5239.514000091,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":5239.716035079,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":5239.716086916,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":5240.174020423,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S2_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":5240.179661793,"data":"loading Laya checkpoint '/tmp/laya_ft/S2_seed42'...\n"}
+,{"stream_name":"stdout","time":5240.376879671,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S2_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":5240.377045052,"data":"loading Laya checkpoint '/tmp/laya_ft/S2_seed42'...\n"}
+,{"stream_name":"stdout","time":5251.284738982,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":5251.487613063,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":5260.914649882,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":5261.121832975,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":5270.596925328,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":5270.800673464,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":5280.260329408,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":5280.462682815,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":5289.976270165,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":5290.178781437,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":5299.706100182,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":5299.915415595,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":5309.423417873,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":5309.625810953,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":5312.313435725,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":5312.515895737,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":5313.717364443,"data":"S2: calibration NLL 0.3130, AUROC 0.793\n"}
+,{"stream_name":"stdout","time":5313.71771209,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S3_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 4 1.25e-05 5e-05 42\n"}
+,{"stream_name":"stdout","time":5313.920183724,"data":"S2: calibration NLL 0.3130, AUROC 0.793\n"}
+,{"stream_name":"stdout","time":5313.920219526,"data":"$ torchrun --standalone --nproc_per_node=2 /kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py /root/.cache/huggingface/hub/models--convaiinnovations--laya-typed-decisions/snapshots/1a793eb568e6718f15941d08f85432581df534e3 /tmp/laya_ft/S3_seed42 /tmp/laya_ft/train_items.pt /tmp/laya_ft/calibration_items.pt 4 1.25e-05 5e-05 42\n"}
+,{"stream_name":"stdout","time":5315.534696837,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":5315.534924137,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":5315.534969946,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":5315.534976189,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":5315.736906516,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] \n"}
+,{"stream_name":"stdout","time":5315.736942564,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":5315.736947438,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n"}
+,{"stream_name":"stdout","time":5315.736951949,"data":"W1002 17:09:39.481000 456 torch/distributed/run.py:852] *****************************************\n"}
+,{"stream_name":"stdout","time":5315.855917684,"data":"[W1002 17:09:39.812249692 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5316.059114348,"data":"[W1002 17:09:39.812249692 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5323.503804305,"data":"[W1002 17:09:47.459997968 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5323.550588642,"data":"[W1002 17:09:47.506957367 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5323.706376188,"data":"[W1002 17:09:47.459997968 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5323.706402673,"data":"[W1002 17:09:47.506957367 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3\n"}
+,{"stream_name":"stdout","time":5328.82927668,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 4 epochs\n"}
+,{"stream_name":"stdout","time":5329.031988196,"data":"Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 4 epochs\n"}
+,{"stream_name":"stdout","time":5336.405001813,"data":"[rank0]:[W1002 17:10:00.361194319 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":5336.616035527,"data":"[rank0]:[W1002 17:10:00.361194319 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":5336.619942667,"data":"[rank1]:[W1002 17:10:00.576052228 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":5336.822328751,"data":"[rank1]:[W1002 17:10:00.576052228 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())\n"}
+,{"stream_name":"stdout","time":5344.978395909,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":5344.978473467,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":5344.979794244,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":5344.979814358,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":5345.181069893,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":5345.181104165,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":5345.181108379,"data":"/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate\n"}
+,{"stream_name":"stdout","time":5345.181113124,"data":"  scheduler.step()\n"}
+,{"stream_name":"stdout","time":5470.623212194,"data":"  Epoch 1/4 | Step 50 | Loss: 0.7299 | Reward: 0.356 | LR: 1.24e-05\n"}
+,{"stream_name":"stdout","time":5470.834079167,"data":"  Epoch 1/4 | Step 50 | Loss: 0.7299 | Reward: 0.356 | LR: 1.24e-05\n"}
+,{"stream_name":"stdout","time":5610.849172815,"data":"  Epoch 1/4 | Step 100 | Loss: 0.5332 | Reward: 0.022 | LR: 1.23e-05\n"}
+,{"stream_name":"stdout","time":5611.060423014,"data":"  Epoch 1/4 | Step 100 | Loss: 0.5332 | Reward: 0.022 | LR: 1.23e-05\n"}
+,{"stream_name":"stdout","time":5752.088536221,"data":"  Epoch 1/4 | Step 150 | Loss: -0.0990 | Reward: 0.677 | LR: 1.20e-05\n"}
+,{"stream_name":"stdout","time":5752.300935011,"data":"  Epoch 1/4 | Step 150 | Loss: -0.0990 | Reward: 0.677 | LR: 1.20e-05\n"}
+,{"stream_name":"stdout","time":5893.93019759,"data":"  Epoch 1/4 | Step 200 | Loss: 0.7457 | Reward: -0.261 | LR: 1.16e-05\n"}
+,{"stream_name":"stdout","time":5894.141933322,"data":"  Epoch 1/4 | Step 200 | Loss: 0.7457 | Reward: -0.261 | LR: 1.16e-05\n"}
+,{"stream_name":"stdout","time":6035.491661049,"data":"  Epoch 1/4 | Step 250 | Loss: 0.3387 | Reward: 0.169 | LR: 1.12e-05\n"}
+,{"stream_name":"stdout","time":6035.703222676,"data":"  Epoch 1/4 | Step 250 | Loss: 0.3387 | Reward: 0.169 | LR: 1.12e-05\n"}
+,{"stream_name":"stdout","time":6142.20532974,"data":"=== Epoch 1/4 Completed in 813.4s | Avg Loss: 0.4366 ===\n"}
+,{"stream_name":"stdout","time":6142.205633534,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":6142.205658425,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":6142.416830737,"data":"=== Epoch 1/4 Completed in 813.4s | Avg Loss: 0.4366 ===\n"}
+,{"stream_name":"stdout","time":6142.416852735,"data":"/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.\n"}
+,{"stream_name":"stdout","time":6142.416859122,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":6143.967828526,"data":"  Saved rolling checkpoint (epoch 1/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":6144.170184472,"data":"  Saved rolling checkpoint (epoch 1/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":6285.083848462,"data":"  Epoch 2/4 | Step 50 | Loss: 0.1249 | Reward: 0.397 | LR: 1.02e-05\n"}
+,{"stream_name":"stdout","time":6285.295518635,"data":"  Epoch 2/4 | Step 50 | Loss: 0.1249 | Reward: 0.397 | LR: 1.02e-05\n"}
+,{"stream_name":"stdout","time":6427.150738065,"data":"  Epoch 2/4 | Step 100 | Loss: -0.1420 | Reward: 0.685 | LR: 9.50e-06\n"}
+,{"stream_name":"stdout","time":6427.362565113,"data":"  Epoch 2/4 | Step 100 | Loss: -0.1420 | Reward: 0.685 | LR: 9.50e-06\n"}
+,{"stream_name":"stdout","time":6568.477348356,"data":"  Epoch 2/4 | Step 150 | Loss: 0.6866 | Reward: -0.272 | LR: 8.80e-06\n"}
+,{"stream_name":"stdout","time":6568.689179922,"data":"  Epoch 2/4 | Step 150 | Loss: 0.6866 | Reward: -0.272 | LR: 8.80e-06\n"}
+,{"stream_name":"stdout","time":6709.595972424,"data":"  Epoch 2/4 | Step 200 | Loss: 0.4518 | Reward: 0.192 | LR: 8.01e-06\n"}
+,{"stream_name":"stdout","time":6709.807610562,"data":"  Epoch 2/4 | Step 200 | Loss: 0.4518 | Reward: 0.192 | LR: 8.01e-06\n"}
+,{"stream_name":"stdout","time":6850.728385327,"data":"  Epoch 2/4 | Step 250 | Loss: 0.5735 | Reward: -0.276 | LR: 7.26e-06\n"}
+,{"stream_name":"stdout","time":6850.940177538,"data":"  Epoch 2/4 | Step 250 | Loss: 0.5735 | Reward: -0.276 | LR: 7.26e-06\n"}
+,{"stream_name":"stdout","time":6957.614975536,"data":"=== Epoch 2/4 Completed in 1628.8s | Avg Loss: 0.3803 ===\n"}
+,{"stream_name":"stdout","time":6957.832398768,"data":"=== Epoch 2/4 Completed in 1628.8s | Avg Loss: 0.3803 ===\n"}
+,{"stream_name":"stdout","time":6959.131101917,"data":"  Saved rolling checkpoint (epoch 2/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":6959.339953573,"data":"  Saved rolling checkpoint (epoch 2/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":7100.794512262,"data":"  Epoch 3/4 | Step 50 | Loss: 1.0111 | Reward: -0.568 | LR: 5.86e-06\n"}
+,{"stream_name":"stdout","time":7101.00680858,"data":"  Epoch 3/4 | Step 50 | Loss: 1.0111 | Reward: -0.568 | LR: 5.86e-06\n"}
+,{"stream_name":"stdout","time":7242.503717323,"data":"  Epoch 3/4 | Step 100 | Loss: 1.2834 | Reward: -0.715 | LR: 5.06e-06\n"}
+,{"stream_name":"stdout","time":7242.71591655,"data":"  Epoch 3/4 | Step 100 | Loss: 1.2834 | Reward: -0.715 | LR: 5.06e-06\n"}
+,{"stream_name":"stdout","time":7383.003687047,"data":"  Epoch 3/4 | Step 150 | Loss: 0.4469 | Reward: 0.151 | LR: 4.35e-06\n"}
+,{"stream_name":"stdout","time":7383.216224187,"data":"  Epoch 3/4 | Step 150 | Loss: 0.4469 | Reward: 0.151 | LR: 4.35e-06\n"}
+,{"stream_name":"stdout","time":7524.070643091,"data":"  Epoch 3/4 | Step 200 | Loss: 0.3596 | Reward: -0.297 | LR: 3.62e-06\n"}
+,{"stream_name":"stdout","time":7524.283848468,"data":"  Epoch 3/4 | Step 200 | Loss: 0.3596 | Reward: -0.297 | LR: 3.62e-06\n"}
+,{"stream_name":"stdout","time":7664.663084328,"data":"  Epoch 3/4 | Step 250 | Loss: 0.3737 | Reward: 0.404 | LR: 3.01e-06\n"}
+,{"stream_name":"stdout","time":7664.875216803,"data":"  Epoch 3/4 | Step 250 | Loss: 0.3737 | Reward: 0.404 | LR: 3.01e-06\n"}
+,{"stream_name":"stdout","time":7771.155334822,"data":"=== Epoch 3/4 Completed in 2442.3s | Avg Loss: 0.3555 ===\n"}
+,{"stream_name":"stdout","time":7771.372885733,"data":"=== Epoch 3/4 Completed in 2442.3s | Avg Loss: 0.3555 ===\n"}
+,{"stream_name":"stdout","time":7772.166638949,"data":"  Saved rolling checkpoint (epoch 3/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":7772.369170613,"data":"  Saved rolling checkpoint (epoch 3/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":7913.462893634,"data":"  Epoch 4/4 | Step 50 | Loss: 0.0021 | Reward: 0.729 | LR: 2.07e-06\n"}
+,{"stream_name":"stdout","time":7913.675190136,"data":"  Epoch 4/4 | Step 50 | Loss: 0.0021 | Reward: 0.729 | LR: 2.07e-06\n"}
+,{"stream_name":"stdout","time":8054.031480608,"data":"  Epoch 4/4 | Step 100 | Loss: 0.5719 | Reward: 0.455 | LR: 1.64e-06\n"}
+,{"stream_name":"stdout","time":8054.244212708,"data":"  Epoch 4/4 | Step 100 | Loss: 0.5719 | Reward: 0.455 | LR: 1.64e-06\n"}
+,{"stream_name":"stdout","time":8194.63852235,"data":"  Epoch 4/4 | Step 150 | Loss: 0.7070 | Reward: -0.007 | LR: 1.33e-06\n"}
+,{"stream_name":"stdout","time":8194.851300036,"data":"  Epoch 4/4 | Step 150 | Loss: 0.7070 | Reward: -0.007 | LR: 1.33e-06\n"}
+,{"stream_name":"stdout","time":8335.042136431,"data":"  Epoch 4/4 | Step 200 | Loss: 0.4494 | Reward: 0.739 | LR: 1.11e-06\n"}
+,{"stream_name":"stdout","time":8335.255017941,"data":"  Epoch 4/4 | Step 200 | Loss: 0.4494 | Reward: 0.739 | LR: 1.11e-06\n"}
+,{"stream_name":"stdout","time":8475.205202686,"data":"  Epoch 4/4 | Step 250 | Loss: -0.3879 | Reward: 0.746 | LR: 1.01e-06\n"}
+,{"stream_name":"stdout","time":8475.417869158,"data":"  Epoch 4/4 | Step 250 | Loss: -0.3879 | Reward: 0.746 | LR: 1.01e-06\n"}
+,{"stream_name":"stdout","time":8581.001117419,"data":"=== Epoch 4/4 Completed in 3252.2s | Avg Loss: 0.2740 ===\n"}
+,{"stream_name":"stdout","time":8581.214629379,"data":"=== Epoch 4/4 Completed in 3252.2s | Avg Loss: 0.2740 ===\n"}
+,{"stream_name":"stdout","time":8581.926878418,"data":"  Saved rolling checkpoint (epoch 4/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":8581.926904475,"data":"\n"}
+,{"stream_name":"stdout","time":8581.926909683,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":8582.129978051,"data":"  Saved rolling checkpoint (epoch 4/4) to /tmp/laya_ft/S3_seed42/checkpoint_latest\n"}
+,{"stream_name":"stdout","time":8582.130005772,"data":"\n"}
+,{"stream_name":"stdout","time":8582.13000994,"data":"Fitting post-training calibration temperatures...\n"}
+,{"stream_name":"stdout","time":8637.581640106,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 2.191]\n"}
+,{"stream_name":"stdout","time":8637.799048029,"data":"Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 2.191]\n"}
+,{"stream_name":"stdout","time":8638.850488463,"data":"Model successfully saved to /tmp/laya_ft/S3_seed42!\n"}
+,{"stream_name":"stdout","time":8639.05322318,"data":"Model successfully saved to /tmp/laya_ft/S3_seed42!\n"}
+,{"stream_name":"stdout","time":8642.000742846,"data":"S3 seed 42: trained in 55.5 min, fitted temperatures [1.2, 1.2, 2.1907832622528076]\n"}
+,{"stream_name":"stdout","time":8642.000789752,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S3_seed42 calibration /kaggle/working/calibration_S3_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8642.203221742,"data":"S3 seed 42: trained in 55.5 min, fitted temperatures [1.2, 1.2, 2.1907832622528076]\n"}
+,{"stream_name":"stdout","time":8642.203259038,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S3_seed42 calibration /kaggle/working/calibration_S3_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8644.547982819,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":8644.750486327,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":8645.197145743,"data":"\n"}
+,{"stream_name":"stdout","time":8645.197548866,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":8645.197568407,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 38479.85it/s]\n"}
+,{"stream_name":"stdout","time":8645.399718988,"data":"\n"}
+,{"stream_name":"stdout","time":8645.399762498,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":8645.399766565,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 38479.85it/s]\n"}
+,{"stream_name":"stdout","time":8653.549826274,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":8653.549863547,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":8653.752385718,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":8653.752596682,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":8654.211191606,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S3_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8654.216820122,"data":"loading Laya checkpoint '/tmp/laya_ft/S3_seed42'...\n"}
+,{"stream_name":"stdout","time":8654.41390138,"data":"Laya W3: state room 981 tokens; 0 done, 730 to go -\u003e calibration_S3_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8654.413955664,"data":"loading Laya checkpoint '/tmp/laya_ft/S3_seed42'...\n"}
+,{"stream_name":"stdout","time":8665.340579814,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":8665.543651994,"data":"  100/730\n"}
+,{"stream_name":"stdout","time":8675.018250415,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":8675.233808266,"data":"  200/730\n"}
+,{"stream_name":"stdout","time":8684.749324593,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":8684.951953393,"data":"  300/730\n"}
+,{"stream_name":"stdout","time":8694.461586968,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":8694.664333013,"data":"  400/730\n"}
+,{"stream_name":"stdout","time":8704.235014379,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":8704.437411443,"data":"  500/730\n"}
+,{"stream_name":"stdout","time":8713.98980089,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":8714.206241382,"data":"  600/730\n"}
+,{"stream_name":"stdout","time":8723.75252091,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":8723.954801125,"data":"  700/730\n"}
+,{"stream_name":"stdout","time":8726.656199633,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":8726.858947471,"data":"  730/730\n"}
+,{"stream_name":"stdout","time":8728.060989844,"data":"S3: calibration NLL 0.3046, AUROC 0.832\n"}
+,{"stream_name":"stdout","time":8728.061020263,"data":"chosen setting: S1 (4, 2.5e-05, 0.0001)\n"}
+,{"stream_name":"stdout","time":8728.21068518,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S1_seed42 test /kaggle/working/test_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8728.263176816,"data":"S3: calibration NLL 0.3046, AUROC 0.832\n"}
+,{"stream_name":"stdout","time":8728.263205259,"data":"chosen setting: S1 (4, 2.5e-05, 0.0001)\n"}
+,{"stream_name":"stdout","time":8728.263216072,"data":"$ /usr/bin/python3 /kaggle/input/datasets/pawnsapprentice/laya-tau2/finetune_kaggle.py score /tmp/laya_ft/S1_seed42 test /kaggle/working/test_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8730.717923455,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":8730.920191069,"data":"loading Laya checkpoint 'convaiinnovations/laya-typed-decisions'...\n"}
+,{"stream_name":"stdout","time":8731.351396341,"data":"\n"}
+,{"stream_name":"stdout","time":8731.351877506,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":8731.35189945,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 54613.33it/s]\n"}
+,{"stream_name":"stdout","time":8731.553595165,"data":"\n"}
+,{"stream_name":"stdout","time":8731.553625625,"data":"Fetching 5 files:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":8731.553632521,"data":"Fetching 5 files: 100%|██████████| 5/5 [00:00\u003c00:00, 54613.33it/s]\n"}
+,{"stream_name":"stdout","time":8739.651309668,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":8739.651395077,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":8739.854119834,"data":"/usr/local/lib/python3.12/dist-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -\u003e 0.5. Treat confidence from the affected entries as uncalibrated.\n"}
+,{"stream_name":"stdout","time":8739.854185609,"data":"  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,\n"}
+,{"stream_name":"stdout","time":8740.309701846,"data":"Laya W3: state room 981 tokens; 0 done, 2169 to go -\u003e test_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8740.311864163,"data":"loading Laya checkpoint '/tmp/laya_ft/S1_seed42'...\n"}
+,{"stream_name":"stdout","time":8740.512446441,"data":"Laya W3: state room 981 tokens; 0 done, 2169 to go -\u003e test_S1_seed42.jsonl\n"}
+,{"stream_name":"stdout","time":8740.512475531,"data":"loading Laya checkpoint '/tmp/laya_ft/S1_seed42'...\n"}
+,{"stream_name":"stdout","time":8751.213882794,"data":"  100/2169\n"}
+,{"stream_name":"stdout","time":8751.43033351,"data":"  100/2169\n"}
+,{"stream_name":"stdout","time":8760.804868448,"data":"  200/2169\n"}
+,{"stream_name":"stdout","time":8761.007508834,"data":"  200/2169\n"}
+,{"stream_name":"stdout","time":8770.490016627,"data":"  300/2169\n"}
+,{"stream_name":"stdout","time":8770.693117887,"data":"  300/2169\n"}
+,{"stream_name":"stdout","time":8779.987931142,"data":"  400/2169\n"}
+,{"stream_name":"stdout","time":8780.190418062,"data":"  400/2169\n"}
+,{"stream_name":"stdout","time":8789.620838102,"data":"  500/2169\n"}
+,{"stream_name":"stdout","time":8789.832190695,"data":"  500/2169\n"}
+,{"stream_name":"stdout","time":8799.352737769,"data":"  600/2169\n"}
+,{"stream_name":"stdout","time":8799.555077752,"data":"  600/2169\n"}
+,{"stream_name":"stdout","time":8808.766471426,"data":"  700/2169\n"}
+,{"stream_name":"stdout","time":8808.969294158,"data":"  700/2169\n"}
+,{"stream_name":"stdout","time":8818.471725216,"data":"  800/2169\n"}
+,{"stream_name":"stdout","time":8818.674482307,"data":"  800/2169\n"}
+,{"stream_name":"stdout","time":8828.200185483,"data":"  900/2169\n"}
+,{"stream_name":"stdout","time":8828.409632744,"data":"  900/2169\n"}
+,{"stream_name":"stdout","time":8837.743581925,"data":"  1000/2169\n"}
+,{"stream_name":"stdout","time":8837.946831995,"data":"  1000/2169\n"}
+,{"stream_name":"stdout","time":8847.438910907,"data":"  1100/2169\n"}
+,{"stream_name":"stdout","time":8847.641737802,"data":"  1100/2169\n"}
+,{"stream_name":"stdout","time":8857.231478674,"data":"  1200/2169\n"}
+,{"stream_name":"stdout","time":8857.434130609,"data":"  1200/2169\n"}
+,{"stream_name":"stdout","time":8867.019781168,"data":"  1300/2169\n"}
+,{"stream_name":"stdout","time":8867.237774637,"data":"  1300/2169\n"}
+,{"stream_name":"stdout","time":8876.825881543,"data":"  1400/2169\n"}
+,{"stream_name":"stdout","time":8877.029117656,"data":"  1400/2169\n"}
+,{"stream_name":"stdout","time":8886.630247993,"data":"  1500/2169\n"}
+,{"stream_name":"stdout","time":8886.832873074,"data":"  1500/2169\n"}
+,{"stream_name":"stdout","time":8896.444859827,"data":"  1600/2169\n"}
+,{"stream_name":"stdout","time":8896.647818132,"data":"  1600/2169\n"}
+,{"stream_name":"stdout","time":8906.205221854,"data":"  1700/2169\n"}
+,{"stream_name":"stdout","time":8906.417356066,"data":"  1700/2169\n"}
+,{"stream_name":"stdout","time":8915.996324781,"data":"  1800/2169\n"}
+,{"stream_name":"stdout","time":8916.199241242,"data":"  1800/2169\n"}
+,{"stream_name":"stdout","time":8925.598301615,"data":"  1900/2169\n"}
+,{"stream_name":"stdout","time":8925.80050144,"data":"  1900/2169\n"}
+,{"stream_name":"stdout","time":8935.221059377,"data":"  2000/2169\n"}
+,{"stream_name":"stdout","time":8935.422994095,"data":"  2000/2169\n"}
+,{"stream_name":"stdout","time":8944.962067203,"data":"  2100/2169\n"}
+,{"stream_name":"stdout","time":8945.171781596,"data":"  2100/2169\n"}
+,{"stream_name":"stdout","time":8951.682737821,"data":"  2169/2169\n"}
+,{"stream_name":"stdout","time":8951.885155691,"data":"  2169/2169\n"}
+,{"stream_name":"stdout","time":8953.131467624,"data":"done: 148.7 min of stages\n"}
+,{"stream_name":"stdout","time":8953.333818676,"data":"done: 148.7 min of stages\n"}
+,{"stream_name":"stderr","time":8956.531114395,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":8956.531140763,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":8956.677843467,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":8956.6778674,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":8957.448466531,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":8957.770653482,"data":"[NbConvertApp] Writing 29274 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":8960.176592415,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":8960.974769908,"data":"[NbConvertApp] Writing 301078 bytes to __results__.html\n"}
+]

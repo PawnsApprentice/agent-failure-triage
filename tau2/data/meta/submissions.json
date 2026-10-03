@@ -1,0 +1,399 @@
+{
+ "claude-opus-4-5_sierra_2026-02-26": {
+  "kind": "submissions",
+  "model_name": "Claude Opus 4.5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "claude-opus-4-5_high_airline_gpt-5.2_4trials.json",
+   "retail": "claude-opus-4-5_high_retail_gpt-5.2_4trials.json",
+   "telecom": "claude-opus-4-5_high_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "claude-opus-4-5_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-sonnet-4-5_sierra_2026-02-26": {
+  "kind": "submissions",
+  "model_name": "Claude Sonnet 4.5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "claude-sonnet-4-5_enabled_airline_gpt-5.2_4trials.json",
+   "retail": "claude-sonnet-4-5_enabled_retail_gpt-5.2_4trials.json",
+   "telecom": "claude-sonnet-4-5_enabled_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "claude-sonnet-4-5_enabled_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "gpt-5-2_sierra_2026-02-26": {
+  "kind": "submissions",
+  "model_name": "GPT-5.2",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "gpt-5.2_high_airline_gpt-5.2_4trials.json",
+   "retail": "gpt-5.2_high_retail_gpt-5.2_4trials.json",
+   "telecom": "gpt-5.2_high_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "gpt-5.2_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "gpt-5-2-none_sierra_2026-02-26": {
+  "kind": "submissions",
+  "model_name": "GPT-5.2",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "gpt-5.2_none_airline_gpt-5.2_4trials.json",
+   "retail": "gpt-5.2_none_retail_gpt-5.2_4trials.json",
+   "telecom": "gpt-5.2_none_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "gpt-5.2_none_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "glm-5-think_sierra_2026-03-02": {
+  "kind": "submissions",
+  "model_name": "GLM-5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "glm-5_enabled_airline_gpt-5.2_4trials.json",
+   "retail": "glm-5_enabled_retail_gpt-5.2_4trials.json",
+   "telecom": "glm-5_enabled_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "glm-5_enabled_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "qwen3.5-397b-a17b-think_sierra_2026-03-02": {
+  "kind": "submissions",
+  "model_name": "Qwen3.5-397B-A17B",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "qwen3.5-397b-a17b_enabled_airline_gpt-5.2_4trials.json",
+   "retail": "qwen3.5-397b-a17b_enabled_retail_gpt-5.2_4trials.json",
+   "telecom": "qwen3.5-397b-a17b_enabled_telecom_gpt-5.2_4trials.json",
+   "banking_knowledge": "qwen3.5-397b-a17b_enabled_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "gemini-3-flash_sierra_2026-03-02": {
+  "kind": "submissions",
+  "model_name": "Gemini 3 Flash",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "geminiflash-airline.json",
+   "retail": "geminiflash-retail.json",
+   "telecom": "geminiflash-telecom.json",
+   "banking_knowledge": "geminiflash-terminal.json"
+  },
+  "submission_type": "standard"
+ },
+ "gemini-3-pro_sierra_2026-03-02": {
+  "kind": "submissions",
+  "model_name": "Gemini 3 Pro",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "airline": "geminipro-airline.json",
+   "retail": "geminipro-retail.json",
+   "telecom": "geminipro-telecom.json",
+   "banking_knowledge": "geminipro-terminal.json"
+  },
+  "submission_type": "standard"
+ },
+ "distyl-buttonagent_distyl_2026-03-25": {
+  "kind": "submissions",
+  "model_name": "Distyl ButtonAgent",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "distyl-buttonagent_banking_knowledge_4trials.json"
+  },
+  "submission_type": "custom"
+ },
+ "gpt-5-4_sierra_2026-03-25": {
+  "kind": "submissions",
+  "model_name": "GPT-5.4",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "raft-30b-a3b_neu_2026-04-29": {
+  "kind": "submissions",
+  "model_name": "RAFT-30B-A3B",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "retail": "results.json"
+  },
+  "submission_type": "custom"
+ },
+ "gpt-5-5_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "GPT-5.5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-opus-4-6_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Claude Opus 4.6",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "claude-opus-4-6_max_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-opus-4-7_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Claude Opus 4.7",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "gemini-2-5-pro_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Gemini 2.5 Pro",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "gemini-2.5-pro_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "gemini-3-1-pro-preview_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Gemini 3.1 Pro Preview",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "gemini-3.1-pro-preview_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "grok-4-fast_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Grok 4 fast",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "grok-4-fast_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "grok-4-1-fast_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Grok 4.1 fast",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "grok-4-1-fast_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "grok-4-2_sierra_2026-05-05": {
+  "kind": "submissions",
+  "model_name": "Grok 4.2",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "grok-4-2_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "submission_type": "standard"
+ },
+ "gpt-5-6-sol_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "GPT-5.6-sol",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-opus-4-8_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Claude Opus 4.8",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-fable-5_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Claude Fable 5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "muse-spark-1-1_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Muse Spark 1.1",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "kimi-k3_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Kimi K3",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "glm-5-2_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "GLM-5.2",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "grok-4-5_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Grok 4.5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "inkling_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Inkling",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-opus-5_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Claude Opus 5",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "qwen3-8-max_sierra_2026-08-04": {
+  "kind": "submissions",
+  "model_name": "Qwen 3.8 Max",
+  "trajectories_available": true,
+  "trajectory_files": {
+   "banking_knowledge": "banking_knowledge_results.json"
+  },
+  "submission_type": "standard"
+ },
+ "claude-3-7-sonnet_anthropic_2024-06-20": {
+  "kind": "legacy_submissions",
+  "model_name": "Claude-3.7-Sonnet",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "claude-opus-4_anthropic_2025-05-22": {
+  "kind": "legacy_submissions",
+  "model_name": "Claude Opus 4",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "claude-opus-4-1_anthropic_2025-01-15": {
+  "kind": "legacy_submissions",
+  "model_name": "Claude Opus 4.1",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "claude-sonnet-4_anthropic_2025-05-22": {
+  "kind": "legacy_submissions",
+  "model_name": "Claude Sonnet 4",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "claude-sonnet-4-5_anthropic_2025-10-02": {
+  "kind": "legacy_submissions",
+  "model_name": "Claude-Sonnet-4.5",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "gpt-4-1_openai_2024-06-20": {
+  "kind": "legacy_submissions",
+  "model_name": "GPT-4.1",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "gpt-4-1-mini_openai_2024-06-20": {
+  "kind": "legacy_submissions",
+  "model_name": "GPT-4.1-mini",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "kimi-k2_moonshot-ai_2025-07-11": {
+  "kind": "legacy_submissions",
+  "model_name": "Kimi-k2",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "o3_openai_2025-01-15": {
+  "kind": "legacy_submissions",
+  "model_name": "o3",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "o4-mini_openai_2024-06-20": {
+  "kind": "legacy_submissions",
+  "model_name": "o4-mini",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "gpt-5_sierra_2025-08-09": {
+  "kind": "legacy_submissions",
+  "model_name": "GPT-5",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "qwen3-max_qwen_2024_09_23": {
+  "kind": "legacy_submissions",
+  "model_name": "Qwen3-Max",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "gemini-3-pro_google_2025-11-18": {
+  "kind": "legacy_submissions",
+  "model_name": "Gemini 3.0 Pro",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "deepseek-v3.2_deepseek_2025-12-01": {
+  "kind": "legacy_submissions",
+  "model_name": "DeepSeek-V3.2",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": null
+ },
+ "toolorchestra_nvidia_2025-12-02": {
+  "kind": "legacy_submissions",
+  "model_name": "Nemotron-Orchestrator-8B",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": "custom"
+ },
+ "qwen3-max_qwen_2026-01-23": {
+  "kind": "legacy_submissions",
+  "model_name": "Qwen3-Max-Thinking",
+  "trajectories_available": false,
+  "trajectory_files": null,
+  "submission_type": "standard"
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.7665,
+  "published": 0.766,
+  "gap": 0.0004999999999999449,
+  "pass": true,
+  "by_type": {
+    "noul": 0.8567,
+    "choice": 0.7333,
+    "score": 0.7238
+  },
+  "decision_agreement_with_cpu": 0.9995,
+  "max_abs_prob_diff_vs_cpu": 0.0028000000000000247,
+  "latency_ms_per_case_p50": 125.28101499998456
+}

@@ -1,0 +1,81 @@
+77 files (5.91 GB) to fetch; 2 named in submission.json but absent from the bucket
+  UNAVAILABLE distyl-buttonagent_distyl_2026-03-25 banking_knowledge: distyl-buttonagent_banking_knowledge_4trials.json
+  UNAVAILABLE raft-30b-a3b_neu_2026-04-29 retail: results.json
+  [1/77] skipped (complete)    19.0MB  repo/gpt-4.1-2025-04-14_telecom-workflow_no-user-op_gpt-4.1-2025-04-14_4trials.json
+  [2/77] skipped (complete)    10.6MB  repo/claude-3-7-sonnet-20250219_airline_default_gpt-4.1-2025-04-14_4trials.json
+  [3/77] skipped (complete)    24.9MB  repo/claude-3-7-sonnet-20250219_retail_default_gpt-4.1-2025-04-14_4trials.json
+  [4/77] skipped (complete)    36.7MB  repo/gpt-4.1-2025-04-14_telecom-workflow_default_gpt-4.1-2025-04-14_4trials.json
+  [5/77] skipped (complete)     8.8MB  repo/gpt-4.1-2025-04-14_airline_default_gpt-4.1-2025-04-14_4trials.json
+  [6/77] skipped (complete)    22.0MB  repo/gpt-4.1-2025-04-14_retail_default_gpt-4.1-2025-04-14_4trials.json
+  [7/77] skipped (complete)    41.2MB  repo/claude-3-7-sonnet-20250219_telecom_default_gpt-4.1-2025-04-14_4trials.json
+  [8/77] downloaded            21.8MB  repo/gpt-4.1-2025-04-14_telecom-workflow_no-user_gpt-4.1-2025-04-14_4trials.json
+  [9/77] downloaded            17.7MB  repo/gpt-4.1-2025-04-14_telecom_no-user-op_gpt-4.1-2025-04-14_4trials.json
+  [10/77] downloaded            29.9MB  repo/gpt-4.1-2025-04-14_telecom-workflow_op_gpt-4.1-2025-04-14_4trials.json
+  [11/77] downloaded            37.5MB  repo/gpt-4.1-2025-04-14_telecom_default_gpt-4.1-2025-04-14_4trials.json
+  [12/77] downloaded            20.4MB  repo/gpt-4.1-2025-04-14_telecom_no-user_gpt-4.1-2025-04-14_4trials.json
+  [13/77] downloaded             9.8MB  repo/gpt-4.1-mini-2025-04-14_airline_base_gpt-4.1-2025-04-14_4trials.json
+  [14/77] downloaded             7.6MB  repo/o4-mini-2025-04-16_airline_default_gpt-4.1-2025-04-14_4trials.json
+  [15/77] downloaded            27.8MB  repo/gpt-4.1-2025-04-14_telecom_op_gpt-4.1-2025-04-14_4trials.json
+  [16/77] downloaded            23.7MB  repo/gpt-4.1-mini-2025-04-14_retail_base_gpt-4.1-2025-04-14_4trials.json
+  [17/77] downloaded            30.9MB  repo/o4-mini-2025-04-16_telecom-workflow_default_gpt-4.1-2025-04-14_4trials.json
+  [18/77] downloaded            22.1MB  repo/o4-mini-2025-04-16_retail_default_gpt-4.1-2025-04-14_4trials.json
+  [19/77] downloaded            12.6MB  repo/o4-mini-2025-04-16_telecom-workflow_no-user-op_gpt-4.1-2025-04-14_4trials.json
+  [20/77] downloaded            51.0MB  repo/gpt-4.1-mini-2025-04-14_telecom_base_gpt-4.1-2025-04-14_4trials.json
+  [21/77] downloaded            19.5MB  repo/o4-mini-2025-04-16_telecom-workflow_no-user_gpt-4.1-2025-04-14_4trials.json
+  [22/77] downloaded            12.9MB  repo/o4-mini-2025-04-16_telecom_no-user-op_gpt-4.1-2025-04-14_4trials.json
+  [23/77] downloaded            21.1MB  repo/o4-mini-2025-04-16_telecom-workflow_op_gpt-4.1-2025-04-14_4trials.json
+  [24/77] downloaded            36.8MB  repo/o4-mini-2025-04-16_telecom_default_gpt-4.1-2025-04-14_4trials.json
+  [25/77] downloaded            18.3MB  repo/o4-mini-2025-04-16_telecom_op_gpt-4.1-2025-04-14_4trials.json
+  [26/77] downloaded            19.2MB  repo/o4-mini-2025-04-16_telecom_no-user_gpt-4.1-2025-04-14_4trials.json
+  [27/77] downloaded            19.9MB  bucket/claude-opus-4-5_sierra_2026-02-26/claude-opus-4-5_high_airline_gpt-5.2_4trials.json
+  [28/77] downloaded            41.0MB  bucket/claude-opus-4-5_sierra_2026-02-26/claude-opus-4-5_high_telecom_gpt-5.2_4trials.json
+  [29/77] downloaded            15.7MB  bucket/claude-sonnet-4-5_sierra_2026-02-26/claude-sonnet-4-5_enabled_airline_gpt-5.2_4trials.json
+  [30/77] downloaded            34.3MB  bucket/claude-sonnet-4-5_sierra_2026-02-26/claude-sonnet-4-5_enabled_retail_gpt-5.2_4trials.json
+  [31/77] downloaded            13.8MB  bucket/gpt-5-2_sierra_2026-02-26/gpt-5.2_high_airline_gpt-5.2_4trials.json
+  [32/77] downloaded            39.8MB  bucket/claude-opus-4-5_sierra_2026-02-26/claude-opus-4-5_high_retail_gpt-5.2_4trials.json
+  [33/77] downloaded            44.5MB  bucket/claude-sonnet-4-5_sierra_2026-02-26/claude-sonnet-4-5_enabled_telecom_gpt-5.2_4trials.json
+  [34/77] downloaded            36.5MB  bucket/gpt-5-2_sierra_2026-02-26/gpt-5.2_high_telecom_gpt-5.2_4trials.json
+  [35/77] downloaded            14.0MB  bucket/gpt-5-2-none_sierra_2026-02-26/gpt-5.2_none_airline_gpt-5.2_4trials.json
+  [36/77] downloaded            31.8MB  bucket/gpt-5-2_sierra_2026-02-26/gpt-5.2_high_retail_gpt-5.2_4trials.json
+  [37/77] downloaded            28.8MB  bucket/gpt-5-2-none_sierra_2026-02-26/gpt-5.2_none_retail_gpt-5.2_4trials.json
+  [38/77] downloaded            36.4MB  bucket/glm-5-think_sierra_2026-03-02/glm-5_enabled_retail_gpt-5.2_4trials.json
+  [39/77] downloaded            17.7MB  bucket/glm-5-think_sierra_2026-03-02/glm-5_enabled_airline_gpt-5.2_4trials.json
+  [40/77] downloaded            34.3MB  bucket/gpt-5-2-none_sierra_2026-02-26/gpt-5.2_none_telecom_gpt-5.2_4trials.json
+  [41/77] downloaded            30.2MB  bucket/qwen3.5-397b-a17b-think_sierra_2026-03-02/qwen3.5-397b-a17b_enabled_airline_gpt-5.2_4trials.json
+  [42/77] downloaded            56.3MB  bucket/glm-5-think_sierra_2026-03-02/glm-5_enabled_telecom_gpt-5.2_4trials.json
+  [43/77] downloaded            44.3MB  bucket/qwen3.5-397b-a17b-think_sierra_2026-03-02/qwen3.5-397b-a17b_enabled_retail_gpt-5.2_4trials.json
+  [44/77] downloaded            30.8MB  bucket/gemini-3-flash_sierra_2026-03-02/geminiflash-telecom.json
+  [45/77] downloaded            72.0MB  bucket/qwen3.5-397b-a17b-think_sierra_2026-03-02/qwen3.5-397b-a17b_enabled_telecom_gpt-5.2_4trials.json
+  [46/77] downloaded            52.1MB  bucket/gemini-3-flash_sierra_2026-03-02/geminiflash-retail.json
+  [47/77] downloaded            32.2MB  bucket/gemini-3-flash_sierra_2026-03-02/geminiflash-airline.json
+  [48/77] downloaded            57.3MB  bucket/gemini-3-pro_sierra_2026-03-02/geminipro-retail.json
+  [49/77] downloaded            32.4MB  bucket/gemini-3-pro_sierra_2026-03-02/geminipro-airline.json
+  [50/77] downloaded            95.0MB  bucket/gemini-3-pro_sierra_2026-03-02/geminipro-telecom.json
+  [51/77] downloaded            94.5MB  bucket/claude-opus-4-5_sierra_2026-02-26/claude-opus-4-5_high_banking_knowledge_gpt-5.2_4trials.json
+  [52/77] downloaded            41.7MB  bucket/gpt-5-2-none_sierra_2026-02-26/gpt-5.2_none_banking_knowledge_gpt-5.2_4trials.json
+  [53/77] downloaded            87.6MB  bucket/claude-sonnet-4-5_sierra_2026-02-26/claude-sonnet-4-5_enabled_banking_knowledge_gpt-5.2_4trials.json
+  [54/77] downloaded            31.5MB  bucket/glm-5-think_sierra_2026-03-02/glm-5_enabled_banking_knowledge_gpt-5.2_4trials.json
+  [55/77] downloaded            32.5MB  bucket/qwen3.5-397b-a17b-think_sierra_2026-03-02/qwen3.5-397b-a17b_enabled_banking_knowledge_gpt-5.2_4trials.json
+  [56/77] downloaded            87.2MB  bucket/gemini-3-flash_sierra_2026-03-02/geminiflash-terminal.json
+  [57/77] downloaded            75.8MB  bucket/gemini-3-pro_sierra_2026-03-02/geminipro-terminal.json
+  [58/77] downloaded           216.3MB  bucket/gpt-5-2_sierra_2026-02-26/gpt-5.2_high_banking_knowledge_gpt-5.2_4trials.json
+  [59/77] downloaded           110.4MB  bucket/claude-opus-4-6_sierra_2026-05-05/claude-opus-4-6_max_banking_knowledge_gpt-5.2_4trials.json
+  [60/77] downloaded           150.4MB  bucket/gpt-5-5_sierra_2026-05-05/banking_knowledge_results.json
+  [61/77] downloaded           232.0MB  bucket/gpt-5-4_sierra_2026-03-25/gpt-5.4_xhigh_banking_knowledge_gpt-5.2_4trials.json
+  [62/77] downloaded           202.3MB  bucket/claude-opus-4-7_sierra_2026-05-05/banking_knowledge_results.json
+  [63/77] downloaded           144.7MB  bucket/gemini-2-5-pro_sierra_2026-05-05/gemini-2.5-pro_high_banking_knowledge_gpt-5.2_4trials.json
+  [64/77] downloaded            95.0MB  bucket/grok-4-fast_sierra_2026-05-05/grok-4-fast_high_banking_knowledge_gpt-5.2_4trials.json
+  [65/77] downloaded           153.9MB  bucket/gemini-3-1-pro-preview_sierra_2026-05-05/gemini-3.1-pro-preview_high_banking_knowledge_gpt-5.2_4trials.json
+  [66/77] downloaded           115.9MB  bucket/grok-4-1-fast_sierra_2026-05-05/grok-4-1-fast_high_banking_knowledge_gpt-5.2_4trials.json
+  [67/77] downloaded           100.4MB  bucket/grok-4-2_sierra_2026-05-05/grok-4-2_high_banking_knowledge_gpt-5.2_4trials.json
+  [68/77] downloaded           150.3MB  bucket/gpt-5-6-sol_sierra_2026-08-04/banking_knowledge_results.json
+  [69/77] downloaded           172.2MB  bucket/claude-fable-5_sierra_2026-08-04/banking_knowledge_results.json
+  [70/77] downloaded           183.4MB  bucket/kimi-k3_sierra_2026-08-04/banking_knowledge_results.json
+  [71/77] downloaded           365.5MB  bucket/muse-spark-1-1_sierra_2026-08-04/banking_knowledge_results.json
+  [72/77] downloaded           329.6MB  bucket/glm-5-2_sierra_2026-08-04/banking_knowledge_results.json
+  [73/77] downloaded           255.1MB  bucket/inkling_sierra_2026-08-04/banking_knowledge_results.json
+  [74/77] downloaded           268.6MB  bucket/claude-opus-4-8_sierra_2026-08-04/banking_knowledge_results.json
+  [75/77] downloaded           247.0MB  bucket/qwen3-8-max_sierra_2026-08-04/banking_knowledge_results.json
+  [76/77] downloaded           242.8MB  bucket/claude-opus-5_sierra_2026-08-04/banking_knowledge_results.json
+  [77/77] downloaded           209.8MB  bucket/grok-4-5_sierra_2026-08-04/banking_knowledge_results.json
+done; 0 failed

@@ -1,0 +1,22 @@
+# secrets and local environment
+.env
+.venv/
+__pycache__/
+*.pyc
+
+# large or third-party data: fetched by scripts, never committed
+models/
+bgl/data/
+laya_check/data/
+tau2/data/*
+!tau2/data/meta/
+!tau2/data/split.json
+
+# derived files that contain raw source text (BGL log lines, tau2 transcripts / messages)
+bgl/alerts.jsonl*
+bgl/results.jsonl*
+bgl/results_rowlevel200.jsonl
+tau2/data_report.json
+tau2/results/format_check_sample.jsonl
+tau2/kaggle/upload/
+tau2/kaggle/package/

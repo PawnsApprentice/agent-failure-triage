@@ -1,0 +1,115 @@
+{
+  "checkpoint": "convaiinnovations/laya-typed-decisions",
+  "dataset": "LocalLLaMA/typed-decisions@d0e2f0c42fef86cc15d1688d25a19f5ba7c85b18",
+  "cases_total": 400,
+  "cases_scored": 400,
+  "cases_errored": 0,
+  "errors": [],
+  "overall": {
+    "n": 2000,
+    "accuracy": 0.766,
+    "ci95": [
+      0.7469,
+      0.784
+    ],
+    "brier": 0.3996,
+    "nll": 0.7069,
+    "ece": 0.2132
+  },
+  "accuracy_counting_errored_as_wrong": 0.766,
+  "published_accuracy": 0.766,
+  "gap": 0.0,
+  "pass": true,
+  "by_type": {
+    "choice": {
+      "n": 600,
+      "accuracy": 0.7333,
+      "ci95": [
+        0.6965,
+        0.7672
+      ],
+      "brier": 0.4651,
+      "nll": 0.865,
+      "ece": 0.2548,
+      "published": 0.733
+    },
+    "noul": {
+      "n": 600,
+      "accuracy": 0.8567,
+      "ci95": [
+        0.8264,
+        0.8824
+      ],
+      "brier": 0.2872,
+      "nll": 0.4561,
+      "ece": 0.1921,
+      "published": 0.857
+    },
+    "score": {
+      "n": 800,
+      "accuracy": 0.7225,
+      "ci95": [
+        0.6905,
+        0.7524
+      ],
+      "brier": 0.4347,
+      "nll": 0.7764,
+      "ece": 0.1987,
+      "published": 0.723
+    }
+  },
+  "by_workflow": {
+    "agent_trace_observability": {
+      "n": 500,
+      "accuracy": 0.73,
+      "ci95": [
+        0.6894,
+        0.7671
+      ],
+      "brier": 0.4612,
+      "nll": 0.8008,
+      "ece": 0.2293,
+      "published": 0.73
+    },
+    "customer_service": {
+      "n": 500,
+      "accuracy": 0.764,
+      "ci95": [
+        0.7249,
+        0.7991
+      ],
+      "brier": 0.3956,
+      "nll": 0.7122,
+      "ece": 0.2128,
+      "published": 0.764
+    },
+    "invoice_processing": {
+      "n": 500,
+      "accuracy": 0.804,
+      "ci95": [
+        0.7669,
+        0.8364
+      ],
+      "brier": 0.3024,
+      "nll": 0.5564,
+      "ece": 0.1649,
+      "published": 0.804
+    },
+    "security_incidents": {
+      "n": 500,
+      "accuracy": 0.766,
+      "ci95": [
+        0.7269,
+        0.801
+      ],
+      "brier": 0.4391,
+      "nll": 0.7582,
+      "ece": 0.2489,
+      "published": 0.766
+    }
+  },
+  "latency_ms_per_case": {
+    "p50": 10179,
+    "p95": 14717
+  }
+}

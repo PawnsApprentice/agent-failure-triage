@@ -1,0 +1,39 @@
+{
+  "selection_rule": "lowest calibration-split NLL at each wording's own refit temperature",
+  "criteria": {
+    "true": "the agent did not complete the customer's task",
+    "false": "the agent completed the customer's task"
+  },
+  "wordings": {
+    "W1": "This agent run failed to complete the customer's task.",
+    "W2": "By the end of this conversation, the customer's request was not fully and correctly carried out.",
+    "W3": "The agent left the customer's problem unresolved or handled it incorrectly."
+  },
+  "scores": {
+    "W1": {
+      "nll_shipped": 0.7230436222954215,
+      "nll_refit": 0.704166726589321,
+      "t_shipped": 1.983399510383606,
+      "t_refit": 5.0,
+      "auroc_calibration": 0.5288475028058361,
+      "n": 736
+    },
+    "W2": {
+      "nll_shipped": 0.7194969463453598,
+      "nll_refit": 0.7030726749703248,
+      "t_shipped": 1.983399510383606,
+      "t_refit": 5.0,
+      "auroc_calibration": 0.5359322390572391,
+      "n": 736
+    },
+    "W3": {
+      "nll_shipped": 0.7138756578467672,
+      "nll_refit": 0.7004690702680171,
+      "t_shipped": 1.983399510383606,
+      "t_refit": 5.0,
+      "auroc_calibration": 0.5472783389450057,
+      "n": 736
+    }
+  },
+  "chosen": "W3"
+}

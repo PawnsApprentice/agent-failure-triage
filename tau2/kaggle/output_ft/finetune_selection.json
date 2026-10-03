@@ -1,0 +1,78 @@
+{
+  "rule": "lowest calibration log loss at the temperature fitted on calibration (seed 42)",
+  "scores": {
+    "S1": {
+      "nll": 0.2916099408361188,
+      "auroc": 0.8408825403568394,
+      "n": 730
+    },
+    "S2": {
+      "nll": 0.31303839972724723,
+      "auroc": 0.7931711979609176,
+      "n": 730
+    },
+    "S3": {
+      "nll": 0.30455380664662984,
+      "auroc": 0.831536745964316,
+      "n": 730
+    }
+  },
+  "chosen": "S1",
+  "info": {
+    "smoke": false,
+    "phase": "select",
+    "gpus": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "settings": {
+      "S1": [
+        4,
+        2.5e-05,
+        0.0001
+      ],
+      "S2": [
+        2,
+        2.5e-05,
+        0.0001
+      ],
+      "S3": [
+        4,
+        1.25e-05,
+        5e-05
+      ]
+    },
+    "selection_seed": 42,
+    "extra_seeds": [
+      43,
+      44
+    ],
+    "fitted_temperatures": {
+      "S1_seed42": [
+        1.2,
+        1.2,
+        2.203507423400879
+      ],
+      "S2_seed42": [
+        1.2,
+        1.2,
+        1.2523502111434937
+      ],
+      "S3_seed42": [
+        1.2,
+        1.2,
+        2.1907832622528076
+      ]
+    }
+  },
+  "timings": {
+    "prepare_s": 76.80422639846802,
+    "train_S1_seed42_s": 3332.799723625183,
+    "score_cal_S1_s": 85.4285671710968,
+    "train_S2_seed42_s": 1704.1398146152496,
+    "score_cal_S2_s": 85.75103807449341,
+    "train_S3_seed42_s": 3328.2828998565674,
+    "score_cal_S3_s": 86.05595993995667,
+    "score_test_S1_seed42_s": 224.84478330612183
+  }
+}

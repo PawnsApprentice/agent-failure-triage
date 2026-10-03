@@ -1,0 +1,50 @@
+W1002 18:36:16.490000 105 torch/distributed/run.py:852] 
+W1002 18:36:16.490000 105 torch/distributed/run.py:852] *****************************************
+W1002 18:36:16.490000 105 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1002 18:36:16.490000 105 torch/distributed/run.py:852] *****************************************
+[W1002 18:36:16.166743570 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1002 18:36:26.324564291 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+[W1002 18:36:26.444878680 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+Starting 2xT4 DDP training: 4604 train items (730 held out for calibration) | 2302 per rank | 4 epochs
+[rank1]:W1002 18:36:47.462000 114 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode
+[rank0]:W1002 18:36:47.512000 113 torch/_inductor/utils.py:1679] [1/0_1] Not enough SMs to use max_autotune_gemm mode
+[rank0]:[W1002 18:36:51.872068995 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W1002 18:36:51.872122339 reducer.cpp:1500] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+/kaggle/input/datasets/pawnsapprentice/laya-tau2/train_ddp_laya.py:193: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scheduler.step()
+  Epoch 1/4 | Step 50 | Loss: 0.1041 | Reward: 0.366 | LR: 2.49e-05
+  Epoch 1/4 | Step 100 | Loss: 0.2132 | Reward: 0.560 | LR: 2.45e-05
+  Epoch 1/4 | Step 150 | Loss: 0.2974 | Reward: 0.197 | LR: 2.40e-05
+  Epoch 1/4 | Step 200 | Loss: -0.0314 | Reward: 0.126 | LR: 2.32e-05
+  Epoch 1/4 | Step 250 | Loss: 0.4687 | Reward: 0.172 | LR: 2.23e-05
+=== Epoch 1/4 Completed in 878.2s | Avg Loss: 0.3959 ===
+/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+  Saved rolling checkpoint (epoch 1/4) to /tmp/laya_ft/S1_seed43/checkpoint_latest
+  Epoch 2/4 | Step 50 | Loss: 0.2737 | Reward: 0.268 | LR: 2.02e-05
+  Epoch 2/4 | Step 100 | Loss: 0.6385 | Reward: -0.242 | LR: 1.87e-05
+  Epoch 2/4 | Step 150 | Loss: 0.1050 | Reward: 0.376 | LR: 1.73e-05
+  Epoch 2/4 | Step 200 | Loss: 0.6605 | Reward: 0.024 | LR: 1.56e-05
+  Epoch 2/4 | Step 250 | Loss: 1.6761 | Reward: -1.384 | LR: 1.41e-05
+=== Epoch 2/4 Completed in 1744.2s | Avg Loss: 0.4241 ===
+  Saved rolling checkpoint (epoch 2/4) to /tmp/laya_ft/S1_seed43/checkpoint_latest
+  Epoch 3/4 | Step 50 | Loss: 0.5796 | Reward: -0.031 | LR: 1.11e-05
+  Epoch 3/4 | Step 100 | Loss: 0.5289 | Reward: -0.255 | LR: 9.47e-06
+  Epoch 3/4 | Step 150 | Loss: 0.7630 | Reward: 0.066 | LR: 7.98e-06
+  Epoch 3/4 | Step 200 | Loss: 0.1362 | Reward: 0.613 | LR: 6.47e-06
+  Epoch 3/4 | Step 250 | Loss: 1.2085 | Reward: -0.655 | LR: 5.20e-06
+=== Epoch 3/4 Completed in 2610.7s | Avg Loss: 0.3392 ===
+  Saved rolling checkpoint (epoch 3/4) to /tmp/laya_ft/S1_seed43/checkpoint_latest
+  Epoch 4/4 | Step 50 | Loss: 0.4365 | Reward: 0.234 | LR: 3.23e-06
+  Epoch 4/4 | Step 100 | Loss: 0.3341 | Reward: 0.268 | LR: 2.33e-06
+  Epoch 4/4 | Step 150 | Loss: 0.5272 | Reward: 0.117 | LR: 1.70e-06
+  Epoch 4/4 | Step 200 | Loss: -0.1146 | Reward: 0.690 | LR: 1.24e-06
+  Epoch 4/4 | Step 250 | Loss: 0.6201 | Reward: 0.031 | LR: 1.03e-06
+=== Epoch 4/4 Completed in 3474.9s | Avg Loss: 0.2536 ===
+  Saved rolling checkpoint (epoch 4/4) to /tmp/laya_ft/S1_seed43/checkpoint_latest
+
+Fitting post-training calibration temperatures...
+Fitted calibration temperatures (choice, score, noul): [1.2, 1.2, 2.12]
+Model successfully saved to /tmp/laya_ft/S1_seed43!
