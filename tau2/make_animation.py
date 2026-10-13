@@ -223,9 +223,12 @@ def draw_card(lanes: list[dict]) -> Image.Image:
             g.line([x(sv), yb + 34, x(sv), yb + 48], fill=ORANGE_HOT, width=4)
         g.text((x1 + 22, yb - 8), f"{m['auroc']:.2f}", font=font(38, True), fill=ORANGE if top3 else DIM)
     g.text((x0, y_axis + 36), "axis starts at 0.5 (chance)   ├─┤ 95% CI   ╹ below bar: each seed", font=font(19), fill=DIM)
-    g.text((LEFT, 1010), "statistically tied: top 3", font=font(46, True), fill=ORANGE)
-    g.text((LEFT, 1078), "the 95% CIs overlap; every paired-bootstrap difference includes 0", font=font(21), fill=DIM)
-    g.text((LEFT, 1110), "zero-shot's CI reaches below the axis (0.47)", font=font(21), fill=DIM)
+    gap = make_chart.full_test_gap()
+    g.text((LEFT, 1010), "top 3: within the margin of error", font=font(46, True), fill=ORANGE)
+    g.text((LEFT, 1078), "on these 497 runs, every paired-bootstrap difference includes 0", font=font(21), fill=DIM)
+    g.text((LEFT, 1110), f"all {gap['n_runs']:,} test runs: TF-IDF leads fine-tuned Laya by {gap['diff']:.3f} "
+           f"(CI {gap['ci95'][0]:+.3f} to {gap['ci95'][1]:+.3f})", font=font(20), fill=DIM)
+    g.text((LEFT, 1142), "zero-shot's CI reaches below the axis (0.47)", font=font(21), fill=DIM)
     footer(g)
     return img
 

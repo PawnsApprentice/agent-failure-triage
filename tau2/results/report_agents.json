@@ -1,0 +1,316 @@
+{
+  "tfidf_agent_held_out": {
+    "stratum": "domain + agent",
+    "per_agent": {
+      "claude-opus-4-5_sierra_2026-02-26": {
+        "n_runs": 320,
+        "n_failed": 46,
+        "auroc_within_domain_held_out": 0.8704182837429927,
+        "auroc_within_domain_seen": 0.8661060802069858
+      },
+      "claude-sonnet-4-5_sierra_2026-02-26": {
+        "n_runs": 320,
+        "n_failed": 82,
+        "auroc_within_domain_held_out": 0.8139894769421232,
+        "auroc_within_domain_seen": 0.8175487465181058
+      },
+      "gemini-3-flash_sierra_2026-03-02": {
+        "n_runs": 260,
+        "n_failed": 37,
+        "auroc_within_domain_held_out": 0.7759731889662284,
+        "auroc_within_domain_seen": 0.7623098736787832
+      },
+      "gemini-3-pro_sierra_2026-03-02": {
+        "n_runs": 316,
+        "n_failed": 45,
+        "auroc_within_domain_held_out": 0.7218145430286858,
+        "auroc_within_domain_seen": 0.7318212141427618
+      },
+      "glm-5-think_sierra_2026-03-02": {
+        "n_runs": 313,
+        "n_failed": 44,
+        "auroc_within_domain_held_out": 0.7460239784683141,
+        "auroc_within_domain_seen": 0.7543430389038415
+      },
+      "gpt-5-2_sierra_2026-02-26": {
+        "n_runs": 320,
+        "n_failed": 41,
+        "auroc_within_domain_held_out": 0.7946621784082712,
+        "auroc_within_domain_seen": 0.7975474873767733
+      },
+      "qwen3.5-397b-a17b-think_sierra_2026-03-02": {
+        "n_runs": 320,
+        "n_failed": 36,
+        "auroc_within_domain_held_out": 0.7672864613596746,
+        "auroc_within_domain_seen": 0.7684485764090645
+      }
+    },
+    "held_out": {
+      "value": 0.7877037607495828,
+      "ci95": [
+        0.6826250835917077,
+        0.8701789513202353
+      ]
+    },
+    "seen": {
+      "value": 0.7891477345655243,
+      "ci95": [
+        0.6827570659678192,
+        0.8732758278014071
+      ]
+    },
+    "seen_minus_held_out": {
+      "value": 0.0014439738159415239,
+      "ci95": [
+        -0.008410695866063578,
+        0.007910841335389884
+      ]
+    }
+  },
+  "auroc_within_domain_and_agent": {
+    "full test": {
+      "rate-domain+agent": {
+        "within_domain_and_agent": {
+          "value": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        },
+        "within_domain": {
+          "value": 0.581082127452186,
+          "ci95": [
+            0.5363217604378818,
+            0.6253301278395381
+          ]
+        }
+      },
+      "tfidf-full": {
+        "within_domain_and_agent": {
+          "value": 0.7694134257476576,
+          "ci95": [
+            0.6656543133938182,
+            0.8527024957893126
+          ]
+        },
+        "within_domain": {
+          "value": 0.7729071870060897,
+          "ci95": [
+            0.6679190909588342,
+            0.8564203606901267
+          ]
+        }
+      },
+      "tfidf-tail1024": {
+        "within_domain_and_agent": {
+          "value": 0.7891477345655243,
+          "ci95": [
+            0.6827570659678192,
+            0.8732758278014071
+          ]
+        },
+        "within_domain": {
+          "value": 0.7907528615479915,
+          "ci95": [
+            0.6874270580842087,
+            0.8735545010744092
+          ]
+        }
+      },
+      "laya-typed (refit T)": {
+        "within_domain_and_agent": {
+          "value": 0.5182742908484148,
+          "ci95": [
+            0.4515433789954338,
+            0.5858018386108274
+          ]
+        },
+        "within_domain": {
+          "value": 0.5190208108440485,
+          "ci95": [
+            0.45245832196967506,
+            0.5910020910696903
+          ]
+        }
+      },
+      "laya-ft seed 42": {
+        "within_domain_and_agent": {
+          "value": 0.7131465793864715,
+          "ci95": [
+            0.6334214683057482,
+            0.8036831825248136
+          ]
+        },
+        "within_domain": {
+          "value": 0.7060701711235305,
+          "ci95": [
+            0.621183527135858,
+            0.796469690766589
+          ]
+        }
+      },
+      "laya-ft seed 43": {
+        "within_domain_and_agent": {
+          "value": 0.7739860094981389,
+          "ci95": [
+            0.687733014804358,
+            0.8530965202982601
+          ]
+        },
+        "within_domain": {
+          "value": 0.7663915572377921,
+          "ci95": [
+            0.6785766959637728,
+            0.8479110676765209
+          ]
+        }
+      },
+      "laya-ft seed 44": {
+        "within_domain_and_agent": {
+          "value": 0.7126812989346683,
+          "ci95": [
+            0.6229450856942987,
+            0.7914674512688489
+          ]
+        },
+        "within_domain": {
+          "value": 0.7139317418890544,
+          "ci95": [
+            0.6256882352395012,
+            0.7930987835461347
+          ]
+        }
+      }
+    },
+    "Haiku 497 sample": {
+      "rate-domain+agent": {
+        "within_domain_and_agent": {
+          "value": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        },
+        "within_domain": {
+          "value": 0.5583585313174946,
+          "ci95": [
+            0.4594379830961497,
+            0.6454274179392663
+          ]
+        }
+      },
+      "tfidf-full": {
+        "within_domain_and_agent": {
+          "value": 0.7573616018845701,
+          "ci95": [
+            0.6248688352570829,
+            0.8559261887863733
+          ]
+        },
+        "within_domain": {
+          "value": 0.7606911447084234,
+          "ci95": [
+            0.65484387510008,
+            0.8482117713320192
+          ]
+        }
+      },
+      "tfidf-tail1024": {
+        "within_domain_and_agent": {
+          "value": 0.800942285041225,
+          "ci95": [
+            0.6844694307800422,
+            0.8911161731207289
+          ]
+        },
+        "within_domain": {
+          "value": 0.7991360691144709,
+          "ci95": [
+            0.695457930007446,
+            0.8811123553564763
+          ]
+        }
+      },
+      "laya-typed (refit T)": {
+        "within_domain_and_agent": {
+          "value": 0.5429917550058893,
+          "ci95": [
+            0.45222929936305734,
+            0.6640959725792631
+          ]
+        },
+        "within_domain": {
+          "value": 0.5555507559395249,
+          "ci95": [
+            0.47334326135517496,
+            0.6471501644135915
+          ]
+        }
+      },
+      "laya-ft seed 42": {
+        "within_domain_and_agent": {
+          "value": 0.7240871613663133,
+          "ci95": [
+            0.6222760290556901,
+            0.8239597622313671
+          ]
+        },
+        "within_domain": {
+          "value": 0.7253563714902808,
+          "ci95": [
+            0.6267464013547841,
+            0.818781163434903
+          ]
+        }
+      },
+      "laya-ft seed 43": {
+        "within_domain_and_agent": {
+          "value": 0.8300942285041225,
+          "ci95": [
+            0.7150386507378778,
+            0.9197604790419162
+          ]
+        },
+        "within_domain": {
+          "value": 0.8238876889848812,
+          "ci95": [
+            0.7241948802642444,
+            0.907884104813575
+          ]
+        }
+      },
+      "laya-ft seed 44": {
+        "within_domain_and_agent": {
+          "value": 0.7108362779740872,
+          "ci95": [
+            0.5912252541466024,
+            0.8266666666666667
+          ]
+        },
+        "within_domain": {
+          "value": 0.7415982721382289,
+          "ci95": [
+            0.6308376915313332,
+            0.8402964959568733
+          ]
+        }
+      },
+      "haiku-4.5 judge": {
+        "within_domain_and_agent": {
+          "value": 0.715547703180212,
+          "ci95": [
+            0.5916187345932621,
+            0.8218562874251497
+          ]
+        },
+        "within_domain": {
+          "value": 0.7231533477321814,
+          "ci95": [
+            0.6050531914893617,
+            0.826708939065883
+          ]
+        }
+      }
+    }
+  }
+}

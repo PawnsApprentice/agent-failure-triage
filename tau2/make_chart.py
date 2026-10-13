@@ -62,9 +62,19 @@ def model_rows() -> tuple[list[dict], int]:
     return out, len(rows)
 
 
+def full_test_gap() -> dict:
+    """TF-IDF minus the fine-tuned mean, within-domain AUROC, on the full test split (2,169 runs).
+    The chart's 497 runs are the Haiku sample; this comparison doesn't involve Haiku, so the full
+    split is the right place to make it."""
+    scope = json.loads((ex.RESULTS / "report_finetune.json").read_text())["scopes"]["full test"]
+    gap = scope["laya-ft mean of 3 seeds"]["tfidf_minus_mean"]["auroc_within_domain"]
+    return gap | {"n_runs": scope["tfidf-tail1024"]["n_runs"]}
+
+
 def draw(models: list[dict], n_runs: int) -> None:
     import matplotlib.pyplot as plt
 
+    gap = full_test_gap()
     plt.rcParams.update({"font.family": "DejaVu Sans", "text.color": INK})
     fig = plt.figure(figsize=(10.8, 13.5), dpi=100, facecolor=SURFACE)
     ax = fig.add_axes([0.07, 0.175, 0.86, 0.52], facecolor=SURFACE)
@@ -72,9 +82,9 @@ def draw(models: list[dict], n_runs: int) -> None:
     fig.text(0.07, 0.945, "Spotting failed AI-agent runs", fontsize=40, fontweight="bold", va="top")
     # Wording backed by chart_claims.json (paired bootstraps, within-domain AUROC, these runs): every
     # pairwise difference among the three, including each fine-tuned seed vs Haiku, has a 95% CI
-    # that includes zero.
-    fig.text(0.07, 0.885, "A simple text classifier, an LLM judge and a\nfine-tuned small model: the differences are\n"
-             "within the margin of error",
+    # that includes zero. That holds on these runs only; the footnote gives the full-test gap.
+    fig.text(0.07, 0.885, "A simple text classifier, an LLM judge and a\nfine-tuned small model: on these runs, the\n"
+             "differences are within the margin of error",
              fontsize=25, color=INK_2, va="top", linespacing=1.3)
     fig.text(0.07, 0.765, f"Within-domain AUROC with 95% CI · {n_runs} held-out\nτ²-bench runs (tasks unseen in training)",
              fontsize=21, color=INK_2, va="top", linespacing=1.35)
@@ -105,10 +115,12 @@ def draw(models: list[dict], n_runs: int) -> None:
     ax.spines["bottom"].set_color(MUTED)
     ax.set_xlabel("AUROC  (1.0 = perfect ranking of failed runs)", fontsize=19, color=INK_2, labelpad=14)
 
-    fig.text(0.07, 0.088, "Label: run failed per the benchmark's database check. Task-disjoint split.\n"
+    fig.text(0.07, 0.092, "Label: run failed per the benchmark's database check. Task-disjoint split.\n"
                           "Within-domain: only failed/succeeded pairs from the same domain count.\n"
-                          "Laya fine-tuned with its official trainer; no seed picked.",
-             fontsize=16, color=INK_2, va="top", linespacing=1.4)
+                          "Laya fine-tuned with its official trainer; no seed picked.\n"
+                          f"All {gap['n_runs']:,} test runs: TF-IDF leads fine-tuned Laya by {gap['diff']:.3f} "
+                          f"(95% CI {gap['ci95'][0]:+.3f} to {gap['ci95'][1]:+.3f}).",
+             fontsize=15, color=INK_2, va="top", linespacing=1.35)
     fig.savefig(OUT_PATH, facecolor=SURFACE)
     print(f"wrote {OUT_PATH}")
     for m in models:

@@ -148,6 +148,26 @@ def recall_at_budget(scores: list[float], labels: list[bool], budget: float = 0.
     return (sum(above) + (k - len(above)) * sum(tied) / len(tied)) / n_pos
 
 
+def stratified_recall_at_budget(scores: list[float], labels: list[bool], strata: list, budget: float = 0.10) -> float:
+    """Share of all positives caught when the top `budget` fraction of every stratum is reviewed,
+    e.g. 10% of each domain. The review slots are fixed per stratum, so knowing that strata differ
+    in base rate can't raise it (the pooled version lets a model spend its budget on one stratum)."""
+    n_pos = sum(bool(y) for y in labels)
+    if not n_pos:
+        return float("nan")
+    by = {}
+    for p, y, s in zip(scores, labels, strata):
+        by.setdefault(s, ([], []))
+        by[s][0].append(p)
+        by[s][1].append(y)
+    caught = 0.0
+    for ps, ys in by.values():
+        pos = sum(bool(y) for y in ys)
+        if pos:
+            caught += recall_at_budget(ps, ys, budget) * pos
+    return caught / n_pos
+
+
 def cluster_bootstrap_ci(clusters: list[list], stat, n_boot: int = 1000, seed: int = 0,
                          alpha: float = 0.05) -> tuple[float, float]:
     """Percentile CI for stat(items), resampling whole clusters (e.g. tasks) with replacement, so

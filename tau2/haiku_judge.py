@@ -46,7 +46,9 @@ def messages_for(text: str) -> list[dict]:
 
 
 def sample() -> list[dict]:
-    """500 test runs, stratified by domain x outcome so the sample keeps the test split's mix."""
+    """500 test runs, stratified by domain x outcome so the sample keeps the test split's mix. The
+    committed sample was drawn before the corpus dropped its 81 empty runs; 3 of the 500 were empty,
+    so 497 remain (haiku_sample.json lists the 3 under dropped_empty_runs)."""
     if SAMPLE_PATH.exists():
         ids = set(json.loads(SAMPLE_PATH.read_text())["run_ids"])
         return [r for r in ex.split_rows("test") if r["run_id"] in ids]
